@@ -1528,3 +1528,7 @@ iframe {
 iframe.youtube {
   height: 600px;
 }
+/* line 8, src/components/_iframe.scss */
+iframe.soundcloud {
+  height: 650px;
+}
