@@ -1,0 +1,54 @@
+.article {
+  position: relative;
+  max-width: 50em;
+
+  // Auto generate styles for each category
+  @for $i from 1 through length($category-list) {
+    $name: nth($category-list, $i);
+    $color: nth($category-color-list, $i);
+
+    &[data-category='#{$name}'] {
+  
+      // Stripe on the left
+      // &:before {
+      //   content: '';
+      //   position: fixed;
+      //   z-index: -1;
+      //   left: 0;
+      //   top: 0;
+      //   height: 100%;
+      //   width: 1em;
+      //   background: rgba(darken($color, 15%), .35);
+
+      //   @include breakpoint(tiny) {
+      //     display: none;
+      //   }
+
+      //   @include breakpoint(small) {
+      //     display: none;
+      //   }
+      // }
+
+      h2 {
+        color: rgba(darken($color, 5%), .85);
+      }
+    }
+
+  }
+
+  // Comments
+  h3 {
+    margin-top: 1em;
+    padding: 1em 0;
+    border-top: .5em solid $color-text;
+  }
+
+  // Only used for animation, because otherwise the pseudo element on .article is placed like shit
+  .articlewrapper {
+    @include animation(flash .45s 1 ease-in-out forwards);
+  }
+}
+
+
+
+

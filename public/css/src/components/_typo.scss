@@ -1,0 +1,62 @@
+/* 
+ * Links
+ */
+a {
+  color: $color-text;
+  text-decoration: none;
+  border-bottom: .1em solid rgba($color-text, .2);
+  padding-bottom: .2em;
+}
+
+
+
+
+
+/* 
+ * Paragraph
+ */
+p {
+  line-height: 1.45em;
+}
+
+
+
+
+
+/* 
+ * Headings
+ */
+h1 {
+  font: 1em sans-serif;
+  margin: 0;
+  display: inline;
+  font-weight: bold;
+
+  &:after {
+    content: ' >>>';
+    font-weight: normal;
+    opacity: .5;
+    margin-left: .25em;
+  }
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+
+
+hr {
+  border: none;
+  background: rgba($color-text, .2);
+  height: .1em;
+}

@@ -1,0 +1,1515 @@
+/**
+ *
+ * Animation 
+ *
+ */
+/**
+ *
+ * Keyframes
+ *
+ */
+@-webkit-keyframes flash {
+  /* line 2, src/core/_keyframes.scss */
+  0%, 60% {
+    opacity: 0;
+    -webkit-transform: scale(-0.25, -0.25);
+    -moz-transform: scale(-0.25, -0.25);
+    -ms-transform: scale(-0.25, -0.25);
+    -o-transform: scale(-0.25, -0.25);
+    transform: scale(-0.25, -0.25);
+  }
+
+  /* line 7, src/core/_keyframes.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: auto;
+    -moz-transform: auto;
+    -ms-transform: auto;
+    -o-transform: auto;
+    transform: auto;
+  }
+}
+
+@-moz-keyframes flash {
+  /* line 2, src/core/_keyframes.scss */
+  0%, 60% {
+    opacity: 0;
+    -webkit-transform: scale(-0.25, -0.25);
+    -moz-transform: scale(-0.25, -0.25);
+    -ms-transform: scale(-0.25, -0.25);
+    -o-transform: scale(-0.25, -0.25);
+    transform: scale(-0.25, -0.25);
+  }
+
+  /* line 7, src/core/_keyframes.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: auto;
+    -moz-transform: auto;
+    -ms-transform: auto;
+    -o-transform: auto;
+    transform: auto;
+  }
+}
+
+@-o-keyframes flash {
+  /* line 2, src/core/_keyframes.scss */
+  0%, 60% {
+    opacity: 0;
+    -webkit-transform: scale(-0.25, -0.25);
+    -moz-transform: scale(-0.25, -0.25);
+    -ms-transform: scale(-0.25, -0.25);
+    -o-transform: scale(-0.25, -0.25);
+    transform: scale(-0.25, -0.25);
+  }
+
+  /* line 7, src/core/_keyframes.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: auto;
+    -moz-transform: auto;
+    -ms-transform: auto;
+    -o-transform: auto;
+    transform: auto;
+  }
+}
+
+@keyframes flash {
+  /* line 2, src/core/_keyframes.scss */
+  0%, 60% {
+    opacity: 0;
+    -webkit-transform: scale(-0.25, -0.25);
+    -moz-transform: scale(-0.25, -0.25);
+    -ms-transform: scale(-0.25, -0.25);
+    -o-transform: scale(-0.25, -0.25);
+    transform: scale(-0.25, -0.25);
+  }
+
+  /* line 7, src/core/_keyframes.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: auto;
+    -moz-transform: auto;
+    -ms-transform: auto;
+    -o-transform: auto;
+    transform: auto;
+  }
+}
+
+/**
+ * bullgrid
+ *
+ * A grid based on the ideas of inuit.css gridsystem. 
+ *
+ *
+ *
+ */
+/**
+ * Fluid and nestable grid system, e.g.:
+ *
+   <div class="gw">
+
+     <div class="g one-third">
+       <p>One third grid</p>
+     </div>
+
+     <div class="g two-thirds">
+       <p>Two thirds grid</p>
+     </div>
+
+     <div class="g one-half">
+       <p>One half grid</p>
+     </div>
+
+     <div class="g one-quarter">
+       <p>One quarter grid</p>
+     </div>
+
+     <div class="g one-quarter">
+       <p>One quarter grid</p>
+     </div>
+
+   </div>
+
+   */
+/**
+ * Default spacing 
+ */
+/**
+ * Micro clearfix. 
+ */
+/* line 52, src/components/_bullgrid.scss */
+.cf, .gw {
+  *zoom: 1;
+}
+/* line 53, src/components/_bullgrid.scss */
+.cf:after, .gw:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Grid wrapper
+ */
+/* line 70, src/components/_bullgrid.scss */
+.gw {
+  /**
+   * Negative margin to negate the padding on the first grid child.
+   */
+  margin-left: -1em;
+  /**
+   * The following declarations allow us to use the `.gw` class on lists.
+   */
+  list-style: none;
+  margin-bottom: 0;
+}
+
+/**
+ * Reverse grid order
+ *
+   <div class="gw  gw--rev">
+
+     <div class="g  one-third">
+       <p>Appears on the right</p>
+     </div>
+
+     <div class="g  two-thirds">
+       <p>Appears on the left</p>
+     </div>
+
+   </div>
+ *
+ */
+/* line 105, src/components/_bullgrid.scss */
+.gw--rev > .g {
+  float: right;
+}
+
+/**
+ * Very infrequently occuring grid wrappers as children of grid wrappers.
+ */
+/* line 116, src/components/_bullgrid.scss */
+.gw > .gw {
+  margin-left: 0;
+}
+
+/**
+ * Remove the spacing of the grid-wrapper. 
+ */
+/* line 127, src/components/_bullgrid.scss */
+.gw--no-spacing {
+  margin-left: 0;
+}
+
+/**
+ * Grid
+ *
+ */
+/* line 139, src/components/_bullgrid.scss */
+.g {
+  float: left;
+  padding-left: 1em;
+}
+
+/**
+ * Remove the spacing of the grid. 
+ */
+/* line 151, src/components/_bullgrid.scss */
+.g--no-spacing {
+  padding-left: 0;
+}
+
+/**
+ *
+ * Sizes in human readable format.
+ *
+ */
+/**
+ * Create the grids for the default view. 
+ */
+/*
+ * Float
+ */
+/* line 169, src/components/_bullgrid.scss */
+.float-left {
+  float: left;
+}
+
+/* line 173, src/components/_bullgrid.scss */
+.float-right {
+  float: left;
+}
+
+/* line 177, src/components/_bullgrid.scss */
+.clear {
+  clear: both;
+}
+
+/*
+ * Hidden
+ */
+/* line 188, src/components/_bullgrid.scss */
+.hidden {
+  display: none;
+}
+
+/**
+ * Whole
+ */
+/* line 199, src/components/_bullgrid.scss */
+.one-whole {
+  width: 100%;
+}
+
+/**
+ * Halves
+ */
+/* line 210, src/components/_bullgrid.scss */
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%;
+}
+
+/**
+ * Thirds
+ */
+/* line 221, src/components/_bullgrid.scss */
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%;
+}
+
+/* line 224, src/components/_bullgrid.scss */
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%;
+}
+
+/**
+ * Quarters
+ */
+/* line 235, src/components/_bullgrid.scss */
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%;
+}
+
+/* line 241, src/components/_bullgrid.scss */
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%;
+}
+
+/**
+ * Fifths
+ */
+/* line 252, src/components/_bullgrid.scss */
+.one-fifth, .two-tenths {
+  width: 20%;
+}
+
+/* line 255, src/components/_bullgrid.scss */
+.two-fifths, .four-tenths {
+  width: 40%;
+}
+
+/* line 258, src/components/_bullgrid.scss */
+.three-fifths, .six-tenths {
+  width: 60%;
+}
+
+/* line 261, src/components/_bullgrid.scss */
+.four-fifths, .eight-tenths {
+  width: 80%;
+}
+
+/**
+ * Sixths
+ */
+/* line 272, src/components/_bullgrid.scss */
+.one-sixth, .two-twelfths {
+  width: 16.666%;
+}
+
+/* line 284, src/components/_bullgrid.scss */
+.five-sixths, .ten-twelfths {
+  width: 83.333%;
+}
+
+/**
+ * Eighths
+ */
+/* line 295, src/components/_bullgrid.scss */
+.one-eighth {
+  width: 12.5%;
+}
+
+/* line 301, src/components/_bullgrid.scss */
+.three-eighths {
+  width: 37.5%;
+}
+
+/* line 307, src/components/_bullgrid.scss */
+.five-eighths {
+  width: 62.5%;
+}
+
+/* line 313, src/components/_bullgrid.scss */
+.seven-eighths {
+  width: 87.5%;
+}
+
+/**
+ * Tenths
+ */
+/* line 324, src/components/_bullgrid.scss */
+.one-tenth {
+  width: 10%;
+}
+
+/* line 330, src/components/_bullgrid.scss */
+.three-tenths {
+  width: 30%;
+}
+
+/* line 342, src/components/_bullgrid.scss */
+.seven-tenths {
+  width: 70%;
+}
+
+/* line 348, src/components/_bullgrid.scss */
+.nine-tenths {
+  width: 90%;
+}
+
+/**
+ * Twelfths
+ */
+/* line 359, src/components/_bullgrid.scss */
+.one-twelfth {
+  width: 8.333%;
+}
+
+/* line 371, src/components/_bullgrid.scss */
+.five-twelfths {
+  width: 41.666%;
+}
+
+/* line 377, src/components/_bullgrid.scss */
+.seven-twelfths {
+  width: 58.333%;
+}
+
+/* line 389, src/components/_bullgrid.scss */
+.eleven-twelfths {
+  width: 91.666%;
+}
+
+/**
+ * Create the grids for different viewport sizes. 
+ *
+ * Use this with the breakpoint mixin provided or you your own
+ */
+@media only screen and (min-width: 80em) {
+  /*
+   * Float
+   */
+  /* line 169, src/components/_bullgrid.scss */
+  .large-float-left {
+    float: left;
+  }
+
+  /* line 173, src/components/_bullgrid.scss */
+  .large-float-right {
+    float: left;
+  }
+
+  /* line 177, src/components/_bullgrid.scss */
+  .large-clear {
+    clear: both;
+  }
+
+  /*
+   * Hidden
+   */
+  /* line 188, src/components/_bullgrid.scss */
+  .large-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 199, src/components/_bullgrid.scss */
+  .large-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 210, src/components/_bullgrid.scss */
+  .large-one-half, .large-two-quarters, .large-three-sixths, .large-four-eighths, .large-five-tenths, .large-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 221, src/components/_bullgrid.scss */
+  .large-one-third, .large-two-sixths, .large-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 224, src/components/_bullgrid.scss */
+  .large-two-thirds, .large-four-sixths, .large-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 235, src/components/_bullgrid.scss */
+  .large-one-quarter, .large-two-eighths, .large-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 241, src/components/_bullgrid.scss */
+  .large-three-quarters, .large-six-eighths, .large-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 252, src/components/_bullgrid.scss */
+  .large-one-fifth, .large-two-tenths {
+    width: 20%;
+  }
+
+  /* line 255, src/components/_bullgrid.scss */
+  .large-two-fifths, .large-four-tenths {
+    width: 40%;
+  }
+
+  /* line 258, src/components/_bullgrid.scss */
+  .large-three-fifths, .large-six-tenths {
+    width: 60%;
+  }
+
+  /* line 261, src/components/_bullgrid.scss */
+  .large-four-fifths, .large-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 272, src/components/_bullgrid.scss */
+  .large-one-sixth, .large-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 284, src/components/_bullgrid.scss */
+  .large-five-sixths, .large-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 295, src/components/_bullgrid.scss */
+  .large-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 301, src/components/_bullgrid.scss */
+  .large-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 307, src/components/_bullgrid.scss */
+  .large-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 313, src/components/_bullgrid.scss */
+  .large-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 324, src/components/_bullgrid.scss */
+  .large-one-tenth {
+    width: 10%;
+  }
+
+  /* line 330, src/components/_bullgrid.scss */
+  .large-three-tenths {
+    width: 30%;
+  }
+
+  /* line 342, src/components/_bullgrid.scss */
+  .large-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 348, src/components/_bullgrid.scss */
+  .large-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 359, src/components/_bullgrid.scss */
+  .large-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 371, src/components/_bullgrid.scss */
+  .large-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 377, src/components/_bullgrid.scss */
+  .large-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 389, src/components/_bullgrid.scss */
+  .large-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media only screen and (min-width: 50em) and (max-width: 79.9375em) {
+  /*
+   * Float
+   */
+  /* line 169, src/components/_bullgrid.scss */
+  .medium-float-left {
+    float: left;
+  }
+
+  /* line 173, src/components/_bullgrid.scss */
+  .medium-float-right {
+    float: left;
+  }
+
+  /* line 177, src/components/_bullgrid.scss */
+  .medium-clear {
+    clear: both;
+  }
+
+  /*
+   * Hidden
+   */
+  /* line 188, src/components/_bullgrid.scss */
+  .medium-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 199, src/components/_bullgrid.scss */
+  .medium-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 210, src/components/_bullgrid.scss */
+  .medium-one-half, .medium-two-quarters, .medium-three-sixths, .medium-four-eighths, .medium-five-tenths, .medium-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 221, src/components/_bullgrid.scss */
+  .medium-one-third, .medium-two-sixths, .medium-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 224, src/components/_bullgrid.scss */
+  .medium-two-thirds, .medium-four-sixths, .medium-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 235, src/components/_bullgrid.scss */
+  .medium-one-quarter, .medium-two-eighths, .medium-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 241, src/components/_bullgrid.scss */
+  .medium-three-quarters, .medium-six-eighths, .medium-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 252, src/components/_bullgrid.scss */
+  .medium-one-fifth, .medium-two-tenths {
+    width: 20%;
+  }
+
+  /* line 255, src/components/_bullgrid.scss */
+  .medium-two-fifths, .medium-four-tenths {
+    width: 40%;
+  }
+
+  /* line 258, src/components/_bullgrid.scss */
+  .medium-three-fifths, .medium-six-tenths {
+    width: 60%;
+  }
+
+  /* line 261, src/components/_bullgrid.scss */
+  .medium-four-fifths, .medium-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 272, src/components/_bullgrid.scss */
+  .medium-one-sixth, .medium-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 284, src/components/_bullgrid.scss */
+  .medium-five-sixths, .medium-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 295, src/components/_bullgrid.scss */
+  .medium-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 301, src/components/_bullgrid.scss */
+  .medium-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 307, src/components/_bullgrid.scss */
+  .medium-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 313, src/components/_bullgrid.scss */
+  .medium-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 324, src/components/_bullgrid.scss */
+  .medium-one-tenth {
+    width: 10%;
+  }
+
+  /* line 330, src/components/_bullgrid.scss */
+  .medium-three-tenths {
+    width: 30%;
+  }
+
+  /* line 342, src/components/_bullgrid.scss */
+  .medium-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 348, src/components/_bullgrid.scss */
+  .medium-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 359, src/components/_bullgrid.scss */
+  .medium-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 371, src/components/_bullgrid.scss */
+  .medium-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 377, src/components/_bullgrid.scss */
+  .medium-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 389, src/components/_bullgrid.scss */
+  .medium-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 49.9375em) {
+  /*
+   * Float
+   */
+  /* line 169, src/components/_bullgrid.scss */
+  .small-float-left {
+    float: left;
+  }
+
+  /* line 173, src/components/_bullgrid.scss */
+  .small-float-right {
+    float: left;
+  }
+
+  /* line 177, src/components/_bullgrid.scss */
+  .small-clear {
+    clear: both;
+  }
+
+  /*
+   * Hidden
+   */
+  /* line 188, src/components/_bullgrid.scss */
+  .small-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 199, src/components/_bullgrid.scss */
+  .small-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 210, src/components/_bullgrid.scss */
+  .small-one-half, .small-two-quarters, .small-three-sixths, .small-four-eighths, .small-five-tenths, .small-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 221, src/components/_bullgrid.scss */
+  .small-one-third, .small-two-sixths, .small-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 224, src/components/_bullgrid.scss */
+  .small-two-thirds, .small-four-sixths, .small-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 235, src/components/_bullgrid.scss */
+  .small-one-quarter, .small-two-eighths, .small-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 241, src/components/_bullgrid.scss */
+  .small-three-quarters, .small-six-eighths, .small-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 252, src/components/_bullgrid.scss */
+  .small-one-fifth, .small-two-tenths {
+    width: 20%;
+  }
+
+  /* line 255, src/components/_bullgrid.scss */
+  .small-two-fifths, .small-four-tenths {
+    width: 40%;
+  }
+
+  /* line 258, src/components/_bullgrid.scss */
+  .small-three-fifths, .small-six-tenths {
+    width: 60%;
+  }
+
+  /* line 261, src/components/_bullgrid.scss */
+  .small-four-fifths, .small-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 272, src/components/_bullgrid.scss */
+  .small-one-sixth, .small-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 284, src/components/_bullgrid.scss */
+  .small-five-sixths, .small-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 295, src/components/_bullgrid.scss */
+  .small-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 301, src/components/_bullgrid.scss */
+  .small-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 307, src/components/_bullgrid.scss */
+  .small-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 313, src/components/_bullgrid.scss */
+  .small-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 324, src/components/_bullgrid.scss */
+  .small-one-tenth {
+    width: 10%;
+  }
+
+  /* line 330, src/components/_bullgrid.scss */
+  .small-three-tenths {
+    width: 30%;
+  }
+
+  /* line 342, src/components/_bullgrid.scss */
+  .small-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 348, src/components/_bullgrid.scss */
+  .small-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 359, src/components/_bullgrid.scss */
+  .small-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 371, src/components/_bullgrid.scss */
+  .small-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 377, src/components/_bullgrid.scss */
+  .small-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 389, src/components/_bullgrid.scss */
+  .small-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media only screen and (max-width: 29.9375em) {
+  /*
+   * Float
+   */
+  /* line 169, src/components/_bullgrid.scss */
+  .tiny-float-left {
+    float: left;
+  }
+
+  /* line 173, src/components/_bullgrid.scss */
+  .tiny-float-right {
+    float: left;
+  }
+
+  /* line 177, src/components/_bullgrid.scss */
+  .tiny-clear {
+    clear: both;
+  }
+
+  /*
+   * Hidden
+   */
+  /* line 188, src/components/_bullgrid.scss */
+  .tiny-hidden {
+    display: none;
+  }
+
+  /**
+   * Whole
+   */
+  /* line 199, src/components/_bullgrid.scss */
+  .tiny-one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  /* line 210, src/components/_bullgrid.scss */
+  .tiny-one-half, .tiny-two-quarters, .tiny-three-sixths, .tiny-four-eighths, .tiny-five-tenths, .tiny-six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  /* line 221, src/components/_bullgrid.scss */
+  .tiny-one-third, .tiny-two-sixths, .tiny-four-twelfths {
+    width: 33.333%;
+  }
+
+  /* line 224, src/components/_bullgrid.scss */
+  .tiny-two-thirds, .tiny-four-sixths, .tiny-eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  /* line 235, src/components/_bullgrid.scss */
+  .tiny-one-quarter, .tiny-two-eighths, .tiny-three-twelfths {
+    width: 25%;
+  }
+
+  /* line 241, src/components/_bullgrid.scss */
+  .tiny-three-quarters, .tiny-six-eighths, .tiny-nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  /* line 252, src/components/_bullgrid.scss */
+  .tiny-one-fifth, .tiny-two-tenths {
+    width: 20%;
+  }
+
+  /* line 255, src/components/_bullgrid.scss */
+  .tiny-two-fifths, .tiny-four-tenths {
+    width: 40%;
+  }
+
+  /* line 258, src/components/_bullgrid.scss */
+  .tiny-three-fifths, .tiny-six-tenths {
+    width: 60%;
+  }
+
+  /* line 261, src/components/_bullgrid.scss */
+  .tiny-four-fifths, .tiny-eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  /* line 272, src/components/_bullgrid.scss */
+  .tiny-one-sixth, .tiny-two-twelfths {
+    width: 16.666%;
+  }
+
+  /* line 284, src/components/_bullgrid.scss */
+  .tiny-five-sixths, .tiny-ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  /* line 295, src/components/_bullgrid.scss */
+  .tiny-one-eighth {
+    width: 12.5%;
+  }
+
+  /* line 301, src/components/_bullgrid.scss */
+  .tiny-three-eighths {
+    width: 37.5%;
+  }
+
+  /* line 307, src/components/_bullgrid.scss */
+  .tiny-five-eighths {
+    width: 62.5%;
+  }
+
+  /* line 313, src/components/_bullgrid.scss */
+  .tiny-seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  /* line 324, src/components/_bullgrid.scss */
+  .tiny-one-tenth {
+    width: 10%;
+  }
+
+  /* line 330, src/components/_bullgrid.scss */
+  .tiny-three-tenths {
+    width: 30%;
+  }
+
+  /* line 342, src/components/_bullgrid.scss */
+  .tiny-seven-tenths {
+    width: 70%;
+  }
+
+  /* line 348, src/components/_bullgrid.scss */
+  .tiny-nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  /* line 359, src/components/_bullgrid.scss */
+  .tiny-one-twelfth {
+    width: 8.333%;
+  }
+
+  /* line 371, src/components/_bullgrid.scss */
+  .tiny-five-twelfths {
+    width: 41.666%;
+  }
+
+  /* line 377, src/components/_bullgrid.scss */
+  .tiny-seven-twelfths {
+    width: 58.333%;
+  }
+
+  /* line 389, src/components/_bullgrid.scss */
+  .tiny-eleven-twelfths {
+    width: 91.666%;
+  }
+}
+/**
+ * Absolute position in the center of the parent element (-50%, -50%). 
+ */
+/* line 2, src/components/_nav.scss */
+.main-navigation ul {
+  line-height: 1.45em;
+  word-wrap: break-word;
+  padding: 0;
+  margin: 0;
+}
+/* line 9, src/components/_nav.scss */
+.main-navigation ul > li {
+  float: left;
+  list-style-type: none;
+  margin: 0 .25em;
+}
+/* line 14, src/components/_nav.scss */
+.main-navigation ul > li:first-child {
+  margin-left: 0;
+}
+/* line 18, src/components/_nav.scss */
+.main-navigation ul > li a {
+  padding: .5em;
+}
+/* line 23, src/components/_nav.scss */
+.main-navigation ul > li h1 a {
+  padding-left: 0;
+}
+
+/* line 1, src/components/_body.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 5, src/components/_body.scss */
+body {
+  font: 1.2em sans-serif;
+  color: #333333;
+  margin: 3.5em 0 0 0;
+  min-height: 100%;
+  min-height: 100vh;
+}
+@media only screen and (max-width: 29.9375em) {
+  /* line 5, src/components/_body.scss */
+  body {
+    margin: 4em 0em 0 0;
+  }
+}
+
+/* line 1, src/components/_element.scss */
+.element {
+  position: relative;
+  height: 15em;
+  padding: .75em;
+  margin: 0 0 1em 0;
+  background: #fff;
+  overflow: hidden;
+  -webkit-animation: flash 0.45s 1 ease-in-out forwards;
+  -moz-animation: flash 0.45s 1 ease-in-out forwards;
+  -o-animation: flash 0.45s 1 ease-in-out forwards;
+  animation: flash 0.45s 1 ease-in-out forwards;
+  -webkit-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  -moz-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  -o-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+  transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+@media only screen and (max-width: 29.9375em) {
+  /* line 1, src/components/_element.scss */
+  .element {
+    height: 10em;
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 49.9375em) {
+  /* line 1, src/components/_element.scss */
+  .element {
+    height: 10em;
+  }
+  /* line 21, src/components/_element.scss */
+  .element h2 {
+    font-size: 1.15em;
+  }
+}
+/* line 27, src/components/_element.scss */
+.element a {
+  border-bottom: none;
+}
+/* line 32, src/components/_element.scss */
+.element .meta {
+  position: absolute;
+  bottom: .5em;
+  font-size: .85em;
+  opacity: .75;
+}
+
+/* line 40, src/components/_element.scss */
+[data-js='element'] {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: visibility 0.25s ease-in-out, opacity 0.35s ease-in-out, width 0.35s ease-in-out, margin 0.25s ease-in-out, -webkit-transform 0.35s ease-in-out, filter 0.35s ease-in-out;
+  -moz-transition: visibility 0.25s ease-in-out, opacity 0.35s ease-in-out, width 0.35s ease-in-out, margin 0.25s ease-in-out, -moz-transform 0.35s ease-in-out, filter 0.35s ease-in-out;
+  -o-transition: visibility 0.25s ease-in-out, opacity 0.35s ease-in-out, width 0.35s ease-in-out, margin 0.25s ease-in-out, -o-transform 0.35s ease-in-out, filter 0.35s ease-in-out;
+  transition: visibility 0.25s ease-in-out, opacity 0.35s ease-in-out, width 0.35s ease-in-out, margin 0.25s ease-in-out, transform 0.35s ease-in-out, filter 0.35s ease-in-out;
+}
+/* line 53, src/components/_element.scss */
+[data-js='element'][data-css='hide'] {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -webkit-transform: scale(0.15, 0.15) translate(15%, 15%);
+  -moz-transform: scale(0.15, 0.15) translate(15%, 15%);
+  -ms-transform: scale(0.15, 0.15) translate(15%, 15%);
+  -o-transform: scale(0.15, 0.15) translate(15%, 15%);
+  transform: scale(0.15, 0.15) translate(15%, 15%);
+}
+
+/* 
+ * Links
+ */
+/* line 4, src/components/_typo.scss */
+a {
+  color: #333333;
+  text-decoration: none;
+  border-bottom: 0.1em solid rgba(51, 51, 51, 0.2);
+  padding-bottom: .2em;
+}
+
+/* 
+ * Paragraph
+ */
+/* line 18, src/components/_typo.scss */
+p {
+  line-height: 1.45em;
+}
+
+/* 
+ * Headings
+ */
+/* line 29, src/components/_typo.scss */
+h1 {
+  font: 1em sans-serif;
+  margin: 0;
+  display: inline;
+  font-weight: bold;
+}
+/* line 35, src/components/_typo.scss */
+h1:after {
+  content: ' >>>';
+  font-weight: normal;
+  opacity: .5;
+  margin-left: .25em;
+}
+
+/* line 43, src/components/_typo.scss */
+h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* line 58, src/components/_typo.scss */
+hr {
+  border: none;
+  background: rgba(51, 51, 51, 0.2);
+  height: .1em;
+}
+
+/* line 1, src/components/_wrapper.scss */
+.wrapper {
+  max-width: 85em;
+  margin: 0 auto;
+}
+
+/* line 2, src/components/_header.scss */
+header[data-role="navigation"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1338;
+  width: 100%;
+  padding: .5em 0;
+  background: #333333;
+  color: #fff;
+}
+/* line 13, src/components/_header.scss */
+header[data-role="navigation"] a {
+  color: #fff;
+  border-bottom: none;
+}
+
+/* line 7, src/components/_category.scss */
+.element[data-category='text'] {
+  border-bottom-color: rgba(25, 135, 188, 0.75);
+  box-shadow: inset 0 0 0 0.2em rgba(25, 135, 188, 0.35);
+}
+/* line 16, src/components/_category.scss */
+.element[data-category='text'] a[data-css='active'] {
+  color: rgba(25, 135, 188, 0.75);
+}
+/* line 22, src/components/_category.scss */
+.element[data-category='text']:hover {
+  background: rgba(37, 165, 226, 0.85);
+  z-index: 1337;
+  -webkit-transform: scale(1.15, 1.15);
+  -moz-transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15);
+  -o-transform: scale(1.15, 1.15);
+  transform: scale(1.15, 1.15);
+}
+/* line 29, src/components/_category.scss */
+.element[data-category='text']:hover h2,
+.element[data-category='text']:hover a,
+.element[data-category='text']:hover .meta {
+  color: #fff;
+  opacity: 1;
+}
+/* line 37, src/components/_category.scss */
+.element[data-category='text'] h2,
+.element[data-category='text'] a,
+.element[data-category='text'] .meta {
+  color: rgba(37, 165, 226, 0.85);
+}
+
+/* line 50, src/components/_category.scss */
+.main-navigation a[data-category='text'][data-css='active'] {
+  color: #3caee5;
+  border-top: 0.5em solid #3caee5;
+}
+
+/* line 7, src/components/_category.scss */
+.element[data-category='audio'] {
+  border-bottom-color: rgba(237, 74, 0, 0.75);
+  box-shadow: inset 0 0 0 0.2em rgba(237, 74, 0, 0.35);
+}
+/* line 16, src/components/_category.scss */
+.element[data-category='audio'] a[data-css='active'] {
+  color: rgba(237, 74, 0, 0.75);
+}
+/* line 22, src/components/_category.scss */
+.element[data-category='audio']:hover {
+  background: rgba(255, 103, 33, 0.85);
+  z-index: 1337;
+  -webkit-transform: scale(1.15, 1.15);
+  -moz-transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15);
+  -o-transform: scale(1.15, 1.15);
+  transform: scale(1.15, 1.15);
+}
+/* line 29, src/components/_category.scss */
+.element[data-category='audio']:hover h2,
+.element[data-category='audio']:hover a,
+.element[data-category='audio']:hover .meta {
+  color: #fff;
+  opacity: 1;
+}
+/* line 37, src/components/_category.scss */
+.element[data-category='audio'] h2,
+.element[data-category='audio'] a,
+.element[data-category='audio'] .meta {
+  color: rgba(255, 103, 33, 0.85);
+}
+
+/* line 50, src/components/_category.scss */
+.main-navigation a[data-category='audio'][data-css='active'] {
+  color: #ff783a;
+  border-top: 0.5em solid #ff783a;
+}
+
+/* line 7, src/components/_category.scss */
+.element[data-category='video'] {
+  border-bottom-color: rgba(171, 25, 21, 0.75);
+  box-shadow: inset 0 0 0 0.2em rgba(171, 25, 21, 0.35);
+}
+/* line 16, src/components/_category.scss */
+.element[data-category='video'] a[data-css='active'] {
+  color: rgba(171, 25, 21, 0.75);
+}
+/* line 22, src/components/_category.scss */
+.element[data-category='video']:hover {
+  background: rgba(216, 32, 26, 0.85);
+  z-index: 1337;
+  -webkit-transform: scale(1.15, 1.15);
+  -moz-transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15);
+  -o-transform: scale(1.15, 1.15);
+  transform: scale(1.15, 1.15);
+}
+/* line 29, src/components/_category.scss */
+.element[data-category='video']:hover h2,
+.element[data-category='video']:hover a,
+.element[data-category='video']:hover .meta {
+  color: #fff;
+  opacity: 1;
+}
+/* line 37, src/components/_category.scss */
+.element[data-category='video'] h2,
+.element[data-category='video'] a,
+.element[data-category='video'] .meta {
+  color: rgba(216, 32, 26, 0.85);
+}
+
+/* line 50, src/components/_category.scss */
+.main-navigation a[data-category='video'][data-css='active'] {
+  color: #e52d27;
+  border-top: 0.5em solid #e52d27;
+}
+
+/* line 7, src/components/_category.scss */
+.element[data-category='code'] {
+  border-bottom-color: rgba(185, 173, 18, 0.75);
+  box-shadow: inset 0 0 0 0.2em rgba(185, 173, 18, 0.35);
+}
+/* line 16, src/components/_category.scss */
+.element[data-category='code'] a[data-css='active'] {
+  color: rgba(185, 173, 18, 0.75);
+}
+/* line 22, src/components/_category.scss */
+.element[data-category='code']:hover {
+  background: rgba(232, 216, 22, 0.85);
+  z-index: 1337;
+  -webkit-transform: scale(1.15, 1.15);
+  -moz-transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15);
+  -o-transform: scale(1.15, 1.15);
+  transform: scale(1.15, 1.15);
+}
+/* line 29, src/components/_category.scss */
+.element[data-category='code']:hover h2,
+.element[data-category='code']:hover a,
+.element[data-category='code']:hover .meta {
+  color: #fff;
+  opacity: 1;
+}
+/* line 37, src/components/_category.scss */
+.element[data-category='code'] h2,
+.element[data-category='code'] a,
+.element[data-category='code'] .meta {
+  color: rgba(232, 216, 22, 0.85);
+}
+
+/* line 50, src/components/_category.scss */
+.main-navigation a[data-category='code'][data-css='active'] {
+  color: #ebdd2c;
+  border-top: 0.5em solid #ebdd2c;
+}
+
+/* line 1, src/components/_article.scss */
+.article {
+  position: relative;
+  max-width: 50em;
+}
+/* line 32, src/components/_article.scss */
+.article[data-category='text'] h2 {
+  color: rgba(37, 165, 226, 0.85);
+}
+/* line 32, src/components/_article.scss */
+.article[data-category='audio'] h2 {
+  color: rgba(255, 103, 33, 0.85);
+}
+/* line 32, src/components/_article.scss */
+.article[data-category='video'] h2 {
+  color: rgba(216, 32, 26, 0.85);
+}
+/* line 32, src/components/_article.scss */
+.article[data-category='code'] h2 {
+  color: rgba(232, 216, 22, 0.85);
+}
+/* line 40, src/components/_article.scss */
+.article h3 {
+  margin-top: 1em;
+  padding: 1em 0;
+  border-top: 0.5em solid #333333;
+}
+/* line 47, src/components/_article.scss */
+.article .articlewrapper {
+  -webkit-animation: flash 0.45s 1 ease-in-out forwards;
+  -moz-animation: flash 0.45s 1 ease-in-out forwards;
+  -o-animation: flash 0.45s 1 ease-in-out forwards;
+  animation: flash 0.45s 1 ease-in-out forwards;
+}
+
+/* line 1, src/components/_footer.scss */
+footer {
+  width: 100%;
+  padding: .5em 1em .5em 0;
+  background: #333333;
+  color: #fff;
+}
+/* line 8, src/components/_footer.scss */
+footer a {
+  color: #fff;
+  border-bottom: none;
+}
+
+/* line 1, src/components/_content.scss */
+.content {
+  padding: 0 1em;
+  margin: 0 0 .5em 0;
+  min-height: 100vh;
+}
+
+/* line 1, src/components/_iframe.scss */
+iframe {
+  width: 100%;
+}
+/* line 4, src/components/_iframe.scss */
+iframe.youtube {
+  height: 600px;
+}

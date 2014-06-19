@@ -1,0 +1,21 @@
+@function reverse-lightness($color) {
+  
+  // Default: has no effect
+  $result: 0;
+  
+  // Get the lightness value in % from $color
+  $value: lightness($color);
+  
+  // If the $color is light
+  @if $value >= 50 {
+    // We return a darker version of $color
+    $result: scale-color($color, $lightness: -$value);
+    
+  // If the $color is dark
+  } @else {
+    // We return a lighter version of $color
+    $result: scale-color($color, $lightness: 100% - $value);
+  } 
+  
+  @return $result;
+}

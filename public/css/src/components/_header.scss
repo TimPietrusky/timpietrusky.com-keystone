@@ -1,0 +1,18 @@
+header {
+  &[data-role="navigation"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1338;
+    width: 100%;
+    padding: .5em 0;
+
+    background: $color-text;
+    color: #fff;
+
+    a {
+      color: #fff;
+      border-bottom: none;
+    }
+  }
+}
