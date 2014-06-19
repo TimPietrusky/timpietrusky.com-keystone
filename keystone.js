@@ -11,7 +11,7 @@ var keystone = require('keystone');
 
 keystone.init({
 	
-	'name': 'TimPietrusky-KeystoneJS',
+	'name': 'megatim',
 	'brand': 'TimPietrusky',
 	
 	'less': 'public',

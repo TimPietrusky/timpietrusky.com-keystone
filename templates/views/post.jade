@@ -28,8 +28,4 @@ block content
 				if data.post
 					// Create a specific disqus URL for older posts
 					script.
-						var disqusUrl = '#{data.post.disqus.url}';
-
-						if (disqusUrl.length > 0) {
-							var disqus_url = 'http://timpietrusky.com/' + disqusUrl + '/';
-						}
+						var disqus_shortname = 'timpietrusky';
