@@ -1264,7 +1264,13 @@ h2 {
   font-size: 1.5em;
 }
 
-/* line 58, src/components/_typo.scss */
+/* line 48, src/components/_typo.scss */
+h3 {
+  font-size: 1.35em;
+  margin: 1em 0 .5em 0;
+}
+
+/* line 59, src/components/_typo.scss */
 hr {
   border: none;
   background: rgba(51, 51, 51, 0.2);
@@ -1471,13 +1477,22 @@ header[data-role="navigation"] a {
 .article[data-category='code'] h2 {
   color: rgba(232, 216, 22, 0.85);
 }
-/* line 40, src/components/_article.scss */
+/* line 39, src/components/_article.scss */
+.article h2 {
+  font-size: 2.15em;
+}
+/* line 44, src/components/_article.scss */
 .article h3 {
   margin-top: 1em;
-  padding: 1em 0;
+  padding: .5em 0 0 0;
   border-top: 0.5em solid #333333;
 }
-/* line 47, src/components/_article.scss */
+/* line 51, src/components/_article.scss */
+.article .date {
+  margin: .5em 0 2.5em 0;
+  color: rgba(51, 51, 51, 0.25);
+}
+/* line 57, src/components/_article.scss */
 .article .articlewrapper {
   -webkit-animation: flash 0.45s 1 ease-in-out forwards;
   -moz-animation: flash 0.45s 1 ease-in-out forwards;

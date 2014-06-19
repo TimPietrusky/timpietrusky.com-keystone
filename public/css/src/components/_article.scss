@@ -36,11 +36,21 @@
 
   }
 
-  // Comments
+  h2 {
+    font-size: 2.15em;
+  }
+
+  // Comments & others
   h3 {
     margin-top: 1em;
-    padding: 1em 0;
+    padding: .5em 0 0 0;
     border-top: .5em solid $color-text;
+  }
+
+  // Date
+  .date {
+    margin: .5em 0 2.5em 0;
+    color: rgba($color-black, .25);
   }
 
   // Only used for animation, because otherwise the pseudo element on .article is placed like shit

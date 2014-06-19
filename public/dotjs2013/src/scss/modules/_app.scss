@@ -1,0 +1,33 @@
+body {
+	font: 1.2em/1.85em $default-font;
+	overflow: auto;
+}
+
+li {
+	color: #000; 
+	// @include transition(color ease-in-out .25s);
+
+	// Inactive state of subslides
+	&.deck-previous,
+	&.deck-before {
+		opacity: .3;
+	}
+}
+
+.goto-form {
+	position: fixed;
+	bottom: 0;
+	z-index: 1337;
+}
+
+.deck-status {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 1337;
+}
+
+iframe {
+	height: 300px;
+	width: 100%;
+}

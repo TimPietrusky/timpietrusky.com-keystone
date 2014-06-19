@@ -1,0 +1,9 @@
+@import "compass/css3";
+
+body {
+  overflow: hidden;
+}
+
+audio {
+  @extend %center;
+}

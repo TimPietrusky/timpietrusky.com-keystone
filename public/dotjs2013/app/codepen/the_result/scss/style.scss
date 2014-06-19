@@ -1,0 +1,53 @@
+@import "compass/css3";
+
+@import "compass/css3/user-interface";
+
+body {
+  font: 1em "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+.wrapper {
+  @extend %center;
+  margin-left: -2em;
+}
+
+.dotjs {
+  font-weight: 700;
+  font-size: 8em;
+  margin-top: .5em;
+  position: relative;
+  padding-left: .95em;
+  
+  @include user-select(none);
+  
+  span {
+    position: absolute;
+    top: .55em;
+    left: 0;
+    font-size: .325em;
+    width: 2.75em;
+    height: 2.75em;
+    font-weight: 400;
+    background: #f9df1d;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    padding-right: .025em;
+    line-height: 2.6em;
+    
+    @include animation(dotjs 4s infinite);
+  }
+}
+
+@include keyframes(dotjs) {
+  0%, 95%, 100% {
+    @include transform(none);
+    opacity: 1;
+  }
+  
+  50% {
+    @include transform(translateX(1em) rotateY(360deg) scale(.25, .25));
+    opacity: 0;
+  }
+}

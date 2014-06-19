@@ -12,7 +12,7 @@ block content
 				else
 					header
 						h2= data.post.title
-						h5
+						h5.date
 							if data.post.publishedDate
 								| #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
 					.post

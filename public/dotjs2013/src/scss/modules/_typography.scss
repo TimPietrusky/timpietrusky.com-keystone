@@ -1,0 +1,50 @@
+h1 {
+  @extend %box--red;
+
+  font-size: 5.5em;
+  line-height: 1.25em;
+  background: $color-red;
+  color: #fff;
+  margin: 0;
+  padding: $default-padding;
+
+  
+}
+
+h2 {
+  @extend %box--blue;
+
+  font-size: 2.5em;
+  line-height: 1.15em;
+  background: $color-blue;
+  color: #fff;
+  margin: 0;
+  padding: $default-padding;
+
+  &.alpha {
+    font-size: 3.25em;
+    margin: $default-margin;
+    text-align: center;
+  }
+}
+
+a {
+  color: $color-red;
+  text-decoration: none;
+  padding: .15em;
+
+  @include transition(color $default-transition, background $default-transition);
+
+  &:hover {
+    background: $color-purple;
+    color: #fff;
+  }
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.align--center {
+  text-align: center;
+}
