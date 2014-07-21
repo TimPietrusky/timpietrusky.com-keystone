@@ -29,13 +29,13 @@ Navigation = (function() {
       if (parameter_category != null) {
 
         // Save the active element
-        this.element_active = document.querySelector('[data-js="navigation"] [data-category="'+parameter_category+'"]');
+        this.element_active = document.querySelector('[data-js="navigation"] [data-category="'+parameter_category+'"]'); 
 
         // Add active attribute
         this.element_active.setAttribute('data-css', 'active');
 
         // Find elements to hide
-        var elements = this.contentArea.querySelectorAll('[data-js="element"]:not([data-category="'+parameter_category+'"]');
+        var elements = this.contentArea.querySelectorAll('[data-js="element"]:not([data-category="'+parameter_category+'"])');
 
         // Filter elements if the category is not blog (parent of all elements)
         if (parameter_category != "blog") {
@@ -98,7 +98,7 @@ Navigation = (function() {
               this.element_active.setAttribute('data-css', 'active');
 
               // Find elements to hide
-              var elements = this.contentArea.querySelectorAll('[data-js="element"]:not([data-category="'+category+'"]');
+              var elements = this.contentArea.querySelectorAll('[data-js="element"]:not([data-category="'+category+'"])');
 
               // Filter elements if the category is not blog (parent of all elements)
               if (category != "blog") {
