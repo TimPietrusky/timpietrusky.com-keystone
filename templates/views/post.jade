@@ -20,12 +20,14 @@ block content
 							.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
 						!= data.post.content.full
 
+
+
 				// Integrate disqus comments
-				h3 Comments
+				div.comments
+					h3 Comments
+					div#disqus_thread
+						
 
-				div#disqus_thread
 
-				if data.post
-					// Create a specific disqus URL for older posts
-					script.
-						var disqus_shortname = 'timpietrusky';
+				// Integrate CodePen
+				script(async src='http://codepen.io/assets/embed/ei.js')

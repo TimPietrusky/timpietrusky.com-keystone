@@ -21,7 +21,20 @@ Post.add({
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 }
 	},
-	categories: { type: Types.Relationship, ref: 'PostCategory', many: true }
+	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+
+	// Meta information for every post 
+	meta: {
+		image : { 
+			type: Types.LocalFile,
+			dest: 'public/images',
+			prefix: 'images'
+		},
+
+		description : {
+			type: String
+		}
+	}
 });
 
 Post.schema.virtual('content.full').get(function() {

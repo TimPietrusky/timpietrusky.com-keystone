@@ -9,3 +9,31 @@
     @include transform(auto);
   }
 }
+
+
+
+
+
+@include keyframes(flash-reverse) {
+  0%, 40% {
+    opacity: 1;
+    @include transform(auto);
+  }
+
+  100% {
+    opacity: 0;
+    @include transform(scale(-.25, -.25));
+  }
+}
+
+
+
+
+
+@include keyframes(lightshow) {
+  @for $i from 1 through ($category-color-list-amount + 1) {
+    #{(100% / ($category-color-list-amount)) * ($i - 1)} {
+      color: nth($category-color-list, ($i % $category-color-list-amount) + 1);
+    }
+  }
+}

@@ -4,9 +4,9 @@ $smallest-unit: .0625em;
 // List of all breakpoints, and their minimum width
 // Human names can be changed, they will be used for $breakpoint param on breakpoint mixin
 $all-breakpoints: (
-  ('large', 80em),
+  ('large', 110em),
   ('medium', 50em),
-  ('small', 30em),
+  ('small', 35em),
   ('tiny') // Last value should not have a value, its min value will essentially be 0
 );
 

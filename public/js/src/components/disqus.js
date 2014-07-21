@@ -1,6 +1,7 @@
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'timpietrusky'; // required: replace example with your forum shortname
 
+
 /* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
     // Only load embed.js if a disqus_thread is found in the DOM

@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
     uglify = require('gulp-uglify'),
-    compass = require('gulp-compass')
+    compass = require('gulp-compass'),
+    minifyCSS = require('gulp-minify-css')
 ;
 
 
@@ -41,7 +42,7 @@ gulp.task('js', function() {
   gulp.src(paths.js)
     .pipe(plumber())
     .pipe(concat('scripts.min.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./public/js/'))
 });
 
@@ -63,6 +64,7 @@ gulp.task('compass', function() {
     css: './public/css',
     sass: './public/css/src'
   }))
+  .pipe(minifyCSS())
   .pipe(gulp.dest('./public/css'));
 });
 

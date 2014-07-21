@@ -8,4 +8,13 @@ iframe {
   &.soundcloud {
     height: 650px;
   }
+
+  // Page
+  &[data-type="alpha"] {
+    height: 550px;
+  }
+
+  @include breakpoint(tiny) {
+    height: 15em !important;
+  }
 }

@@ -1,6 +1,7 @@
 .article {
   position: relative;
   max-width: 50em;
+  overflow-y: hidden;
 
   // Auto generate styles for each category
   @for $i from 1 through length($category-list) {
@@ -9,7 +10,7 @@
 
     &[data-category='#{$name}'] {
   
-      // Stripe on the left
+      // // Stripe on the left
       // &:before {
       //   content: '';
       //   position: fixed;
@@ -19,21 +20,56 @@
       //   height: 100%;
       //   width: 1em;
       //   background: rgba(darken($color, 15%), .35);
+      //   display: none;
 
-      //   @include breakpoint(tiny) {
-      //     display: none;
-      //   }
-
-      //   @include breakpoint(small) {
-      //     display: none;
+      //   @include breakpoint(large) {
+      //     display: block;
       //   }
       // }
+
+      a {
+        border-bottom-color: rgba($color, .85);
+
+        &:hover {
+          color: $color;
+          border-bottom-color: $color;
+        }
+      }
 
       h2 {
         color: rgba(darken($color, 5%), .85);
       }
+
+      blockquote {
+        padding: 1em;
+        margin: 0 0 0 0;
+        color: darken($color, 25%);
+        background: reverse-lightness(darken($color, 25%));
+      }
+
+      // Comments
+      .comments {
+        border-top: none;
+
+        box-shadow: 
+          0 0 0 .5em $body-background,
+          0 0 0 1em rgba(darken($color, 0), .15)
+        ;
+
+        h3 {
+          padding: .5em;
+          background: rgba(darken($color, 5%), .85);
+          color: $body-background;
+          // border-bottom: $border-top;
+          // border-bottom-color: rgba(darken($color, 0), .25);
+        }
+      }
     }
 
+  }
+
+  a {
+    padding-bottom: .085em;
   }
 
   h2 {
@@ -44,7 +80,7 @@
   h3 {
     margin-top: 1em;
     padding: .5em 0 0 0;
-    border-top: .5em solid $color-text;
+    border-top: $border-top;
   }
 
   // Date
@@ -55,10 +91,6 @@
 
   // Only used for animation, because otherwise the pseudo element on .article is placed like shit
   .articlewrapper {
-    @include animation(flash .45s 1 ease-in-out forwards);
+    @include animation(flash $animation-flash 1 ease-in-out forwards);
   }
 }
-
-
-
-

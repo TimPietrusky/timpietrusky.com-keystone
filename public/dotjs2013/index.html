@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Sync HTML5 audio with CSS3 animation</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Tim Pietrusky">
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta name="description" content="Tim Pietruskys talk for dotjs 2013.">
+
+    <link href="skin/css/style.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="skin/img/favicon.ico" type="image/x-icon">
+  </head>
+
+<body class="deck-container">
+
+
+
+
+
+<!-- 
+  Title 
+-->
+<section class="slide">
+  <div class="box--center">
+    <h1>Sync HTML5 audio with CSS3&nbsp;animation</h1>
+  
+    <p>
+      <a href="http://twitter.com/TimPietrusky" target="_blank">@TimPietrusky</a>
+    </p>
+  </div>
+</section>
+
+
+
+
+
+<!-- 
+  About me 
+-->
+<!-- <section class="slide box--vcenter">
+
+  <div class="box__one-half">
+    <h2 class="alpha box--red">Tim Pietrusky</h2>
+  </div>
+    
+  <div class="box__one-half">
+    <ul>
+      <li class="slide">
+        <p>Web Craftsman</p>
+      </li>
+      <li class="slide">
+        <p>In love with <a href="http://codepen.io/TimPietrusky" target="_blank">CodePen</a>, <a href="https://github.com/TimPietrusky" target="_blank">GitHub</a> and <a href="http://soundcloud.com/TimPietrusky" target="_blank">SoundCloud</a></p>
+      </li>
+      <li class="slide">
+        <p>Part of <a href="http://twitter.com/4ae9b8" target="_blank">@4ae9b8</a> & <a href="http://twitter.com/bullgit" target="_blank">@bullgit</a></p>
+      </li>
+    </ul>
+  </div>
+</section> -->
+
+
+
+
+
+<!-- 
+  Markup 
+-->
+<section class="slide">
+    <h2>Markup</h2>
+
+    <div class="box__one-third">
+      <iframe src="codepen/markup/index.html" frameborder="0"></iframe>
+<!--       <p data-height="300" data-theme-id="41" data-slug-hash="159c4b7f8fd99a6d9025e64ab4fd928b" data-user="TimPietrusky" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/TimPietrusky/pen/159c4b7f8fd99a6d9025e64ab4fd928b'>dotjs2013 - animation</a> by Tim Pietrusky (<a href='http://codepen.io/TimPietrusky'>@TimPietrusky</a>) on <a href='http://codepen.io'>CodePen</a></p> -->
+
+      <p class="align--center">
+        <a href="http://codepen.io/TimPietrusky/pen/159c4b7f8fd99a6d9025e64ab4fd928b" target="_blank">src</a>
+      </p>
+    </div>
+
+    <div class="box__two-thirds">
+      <ul class="clean">
+        <li class="slide">
+<pre><code>&lt;h1 class="dotjs">
+  &lt;span>dot&lt;/span>
+  JS
+&lt;/h1></code></pre>
+        </li>
+      </ul>
+    </div>
+</section>
+
+
+
+
+
+<!-- 
+  CSS Animation 
+-->
+<section class="slide">
+    <h2>CSS3 animation</h2>
+
+    <div class="box__one-third">
+      <iframe src="codepen/animation/index.html" frameborder="0"></iframe>
+<!--       <p data-height="300" data-theme-id="41" data-slug-hash="0fc64a22660c66dc599e804f152d05ce" data-user="TimPietrusky" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/TimPietrusky/pen/0fc64a22660c66dc599e804f152d05ce'>0fc64a22660c66dc599e804f152d05ce</a> by Tim Pietrusky (<a href='http://codepen.io/TimPietrusky'>@TimPietrusky</a>) on <a href='http://codepen.io'>CodePen</a></p> -->
+
+      <p class="align--center">
+        <a href="http://codepen.io/TimPietrusky/pen/0fc64a22660c66dc599e804f152d05ce" target="_blank">src</a>
+      </p>
+    </div>
+
+    <div class="box__two-thirds">
+      <ul class="clean">
+        <li class="slide">
+<pre><code>animation: dotjs 4s infinite;</code></pre>
+        </li>
+        <li class="slide">
+<pre><code>@keyframes dotjs {
+  0%, 95%, 100%  {
+    transform: none;
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(1em) rotateY(360deg) scale(.25, .25));
+    opacity: 0;
+  }
+}</code></pre>
+        </li>
+      </ul>
+    </div>
+
+</section>
+
+
+
+
+
+<!-- 
+  CSS3 animation restarted with JS
+-->
+<section class="slide">
+    <h2>CSS3 animation controlled with JS</h2>
+
+    <div class="box__one-third">
+      <iframe src="codepen/animation_controlled_with_js/index.html" frameborder="0"></iframe>
+<!--       <p data-height="300" data-theme-id="41" data-slug-hash="494e0b8d48f6c50ec182b66ed23751ca" data-user="TimPietrusky" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/TimPietrusky/pen/494e0b8d48f6c50ec182b66ed23751ca'>494e0b8d48f6c50ec182b66ed23751ca</a> by Tim Pietrusky (<a href='http://codepen.io/TimPietrusky'>@TimPietrusky</a>) on <a href='http://codepen.io'>CodePen</a></p> -->
+
+      <p class="align--center">
+        <a href="http://codepen.io/TimPietrusky/pen/494e0b8d48f6c50ec182b66ed23751ca" target="_blank">src</a>
+      </p>
+    </div>
+
+    <div class="box__two-thirds">
+      <ul class="clean">
+<!--         <li class="slide">
+<pre><code>var el = document.querySelector('.dotjs'),
+    clone;</code></pre>
+        </li> -->
+        <li class="slide">
+<pre><code>function resetAnimation() {
+  clone = el.cloneNode(true);
+  el.parentNode.replaceChild(clone, el);
+  el = clone;
+};</code></pre>
+        </li>
+      </ul>
+    </div>
+
+</section>
+
+
+
+
+
+<!-- 
+  HTML5 audio
+-->
+<section class="slide">
+    <h2>HTML5 audio</h2>
+
+    <div class="box__one-third">
+      <iframe src="codepen/audio/index.html" frameborder="0"></iframe>
+<!--       <p data-height="300" data-theme-id="41" data-slug-hash="d73e4ddf620f25c3e754edb9d014d9b1" data-user="TimPietrusky" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/TimPietrusky/pen/d73e4ddf620f25c3e754edb9d014d9b1'>d73e4ddf620f25c3e754edb9d014d9b1</a> by Tim Pietrusky (<a href='http://codepen.io/TimPietrusky'>@TimPietrusky</a>) on <a href='http://codepen.io'>CodePen</a></p> -->
+
+      <p class="align--center">
+        <a href="http://codepen.io/TimPietrusky/pen/d73e4ddf620f25c3e754edb9d014d9b1" target="_blank">src</a>
+      </p>
+    </div>
+
+    <div class="box__two-thirds">
+      <ul class="clean">
+        <li class="slide">
+<pre><code>&lt;audio preload="auto" controls="true">
+  &lt;source src="wobble_wobble.ogg" type="audio/ogg" />
+  &lt;source src="wobble_wobble.mp3" type="audio/mpeg" />
+&lt;/audio></code></pre>
+        </li>
+      </ul>
+    </div>
+
+</section>
+
+
+
+
+
+<!-- 
+  HTML5 audio controlled with JS
+-->
+<section class="slide">
+    <h2>HTML5 audio controlled with JS</h2>
+
+    <div class="box__one-third">
+      <iframe src="codepen/audio_controlled_with_js/index.html" frameborder="0"></iframe>
+<!--       <p data-height="300" data-theme-id="41" data-slug-hash="df851edd7b0b5496c69a016e5f5fd345" data-user="TimPietrusky" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/TimPietrusky/pen/df851edd7b0b5496c69a016e5f5fd345'>df851edd7b0b5496c69a016e5f5fd345</a> by Tim Pietrusky (<a href='http://codepen.io/TimPietrusky'>@TimPietrusky</a>) on <a href='http://codepen.io'>CodePen</a></p> -->
+
+      <p class="align--center">
+        <a href="http://codepen.io/TimPietrusky/pen/df851edd7b0b5496c69a016e5f5fd345" target="_blank">src</a>
+      </p>
+    </div>
+
+    <div class="box__two-thirds">
+      <ul class="clean">
+<!--         <li class="slide">
+<pre><code>var el_audio = document.querySelector('.dotjs__audio');</code></pre>
+        </li> -->
+        <li class="slide">
+<pre><code>el_audio.addEventListener('ended', function() {
+  resetAudio();
+}, false);</code></pre>
+        </li>
+        <li class="slide">
+<pre><code>function resetAudio() {
+  el_audio.currentTime = 0;
+  el_audio.play();
+}</code></pre>
+        </li>
+      </ul>
+    </div>
+
+</section>
+
+
+
+
+
+<!-- 
+  The result 
+-->
+<section class="slide">
+  <div class="box--center">
+    <h1 class="box--red">The Result</h1>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- 
+  Synced CSS3 animation & HTML5 audio
+-->
+<section class="slide">
+    <h2 class="box--red">Synced CSS3 animation & HTML5 audio</h2>
+
+    <div class="box__one-third">
+      <iframe src="codepen/the_result/index.html" frameborder="0"></iframe>
+<!--       <p data-height="300" data-theme-id="41" data-slug-hash="517dfe2f881a41d874bb48e7f444126b" data-user="TimPietrusky" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/TimPietrusky/pen/517dfe2f881a41d874bb48e7f444126b'>dotjs2013 - animation & audio in sync</a> by Tim Pietrusky (<a href='http://codepen.io/TimPietrusky'>@TimPietrusky</a>) on <a href='http://codepen.io'>CodePen</a></p> -->
+
+      <p class="align--center">
+        <a href="http://codepen.io/TimPietrusky/pen/517dfe2f881a41d874bb48e7f444126b" target="_blank">src</a>
+      </p>
+    </div>
+
+    <div class="box__two-thirds">
+      <ul class="clean">
+        <li class="slide">
+<pre><code>el_audio.addEventListener('ended', function() {
+  resetAudio();
+  resetAnimation();
+}, false);</code></pre>
+        </li>
+      </ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- 
+  The future 
+-->
+<section class="slide">
+  <div class="box--center">
+    <h1 class="box--yellow">Advanced Techniques</h1>
+  </div>
+</section>
+
+
+
+
+
+<!-- 
+  Web Animations
+-->
+<section class="slide">
+    <h2 class="box--yellow">Web Animations</h2>
+    
+    <ul>
+<!--       <li class="slide">
+        <p>A model for synchronization and timing of changes to the presentation of a Web page (<a href="http://dev.w3.org/fxtf/web-animations/" target="_blank">W3C specification</a>)</p>
+      </li> -->
+      <li class="slide">
+        <p>Replace underlying implementations for CSS transition, CSS animation and SVG animation</p>
+      </li>
+      <li class="slide">
+        <p>JS API</p>
+      </li>
+      <li class="slide">
+        <p>No browser support</p>
+      </li>
+      <li class="slide">
+        <p>
+          Usable through a <a href="http://www.polymer-project.org/platform/web-animations.html" target="_blank">Polyfill from Polymer</a>
+        </p>
+      </li>
+    </ul>
+</section>
+
+
+
+
+
+<!-- 
+  Web Animations: example
+-->
+<!-- <section class="slide">
+  <h2 class="box--yellow">Web Animations: Example</h2>
+
+  <div class="box__one-third">
+    <p data-height="300" data-theme-id="41" data-slug-hash="e3193d94b1067b19dad7a237ae08efce" data-user="TimPietrusky" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/TimPietrusky/pen/e3193d94b1067b19dad7a237ae08efce'>dotjs2013 - web animations</a> by Tim Pietrusky (<a href='http://codepen.io/TimPietrusky'>@TimPietrusky</a>) on <a href='http://codepen.io'>CodePen</a></p>
+
+    <p class="align--center">
+      <a href="http://codepen.io/TimPietrusky/pen/e3193d94b1067b19dad7a237ae08efce" target="_blank">src</a>
+    </p>
+  </div>
+
+  <div class="box__two-thirds">
+    <ul class="clean">
+      <li class="slide">
+<pre><code>var el_animation = new Animation(el, [
+  { offset: 0, 
+    opacity: "1", 
+    transform: "none" }, 
+  { offset: .5,
+    opacity: "0", 
+    transform: "translateX(1em) rotateY(360deg) scale(.25, .25)" }, 
+  { offset: .95, 
+    opacity: "1", 
+    transform: "none" }
+],
+{ duration: 4, iterations: Infinity });</code></pre>
+      </li>
+      <li class="slide">
+<pre><code>var player = document.timeline.play(el_animation);</code></pre>
+      </li>
+    </ul>
+  </div>
+</section> -->
+
+
+
+
+
+<!-- 
+  Web Audio API
+-->
+<section class="slide">
+    <h2 class="box--yellow">Web Audio API</h2>
+
+    <ul>
+      <li class="slide">
+        <p>High-level JS API to processing and synthesizing audio (<a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html" target="_blank">W3C specification</a>)</p>
+      </li>
+<!--       <li class="slide">
+        <p>Supported in</p>
+          <ul>
+            <li>Chrome 10+</li>
+            <li>Firefox 25+</li>
+            <li>Safari 6+</li>
+            <li>Opera 15+</li>
+            <li>iOS 6+</li>
+          </ul>
+      </li> -->
+      <li class="slide"> 
+        <p>Not supported by</p>
+
+        <ul>
+          <li>Internet Explorer</li>
+          <li>Android Browser</li>
+          <li>Opera Mini</li>
+        </ul>
+      </li>
+      <li class="slide">
+        <p>
+          Usable through different <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills#web-audio-data-api" target="_blank">Polyfills</a>, but with flash fallback
+        </p>
+      </li>
+    </ul>
+</section>
+
+
+
+
+
+<!-- 
+  Cheers 
+-->
+<section class="slide">
+  <div class="box--center">
+    <h1>Cheers!</h1>
+
+    <p>
+      <a href="http://twitter.com/TimPietrusky" target="_blank">@TimPietrusky</a>
+    </p>
+
+    <p>
+      <a href="http://timpietrusky.com/dotjs2013" target="_blank">timpietrusky.com/dotjs2013</a>
+    </p>
+  </div>
+</section>
+
+<!-- End slides. -->
+
+
+
+    <script src="skin/js/scripts.min.js"></script>
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+  </body>
+</html>

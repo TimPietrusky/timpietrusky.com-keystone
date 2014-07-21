@@ -11,17 +11,32 @@
       list-style-type: none;
       margin: 0 .25em;
 
+      @include breakpoint(tiny) {
+        width: 25%;
+        text-align: center;
+        margin: 0;
+      }
+
       &:first-child {
         margin-left: 0;
+
+        @include breakpoint(tiny) {
+          width: 100%;
+          padding-bottom: .25em;
+        }
       }
       
       a {
         padding: .5em;
+
+        @include breakpoint(tiny) {
+          padding: .35em;
+        }
       }
 
       h1 {
         a {
-          padding-left: 0;
+          padding: 0;
         }
       }
     }

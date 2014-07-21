@@ -5,10 +5,12 @@
   margin: 0 0 1em 0;
   background: #fff;
   overflow: hidden;
-  @include animation(flash .45s 1 ease-in-out forwards);
+  border-bottom: 2px solid $color-grey-light;
+
+  @include animation(flash $animation-flash 1 ease-in-out forwards);
   @include transition(
-    background .25s ease-in-out, 
-    color .25s ease-in-out
+    background $animation-flash ease-out, 
+    color .25s ease-out
   );
 
   @include breakpoint(tiny) {
@@ -23,9 +25,15 @@
     }
   }
 
-
   a {
     border-bottom: none;
+  }
+
+  h2,
+  .meta {
+    @include transition(
+      color .25s ease-out
+    );
   }
 
 
@@ -37,19 +45,32 @@
   }
 }
 
+
+
+
+
 [data-js='element'] {
   opacity: 1;
   visibility: visible;
 
   @include transition(
-    visibility .25s ease-in-out,
-    opacity .35s ease-in-out,
-    width .35s ease-in-out,
-    margin .25s ease-in-out,
-    transform .35s ease-in-out,
-    filter .35s ease-in-out
+    visibility .25s * $element-transition ease-in-out,
+    opacity .35s * $element-transition ease-in-out,
+    width .35s * $element-transition ease-in-out,
+    margin .25s * $element-transition ease-in-out,
+    transform .35s * $element-transition ease-in-out,
+    filter .35s * $element-transition ease-in-out
   );
 
+  a {
+    &:active {
+      .element {
+        @include animation(flash-reverse $animation-flash 1 ease-in-out forwards);
+      }
+    }
+  }
+
+  // Hide the element
   &[data-css='hide'] {
     opacity: 0;
     visibility: hidden;
@@ -58,6 +79,11 @@
     padding: 0;
     filter: blur(5px);
     -webkit-filter: blur(5px);
+
+    @include breakpoint(tiny) {
+      filter: none; 
+      -webkit-filter: none;
+    }
 
     @include transform(scale(.15, .15) translate(15%, 15%));
   }

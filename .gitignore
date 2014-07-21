@@ -20,3 +20,4 @@ node_modules
 .sass-cache
 node_modules
 sftp-config.json
+.tmp

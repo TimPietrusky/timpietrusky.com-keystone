@@ -6,7 +6,7 @@ Navigation = (function() {
       this.el = document.querySelector('[data-js="navigation"]');
 
       // Get child elements
-      this.childs = this.el.querySelectorAll('ul > li');
+      this.childs = this.el.querySelectorAll('ul > li'); 
 
       // Content
       this.contentArea = document.querySelector('[data-js="content"]');

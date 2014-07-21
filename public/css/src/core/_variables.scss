@@ -1,9 +1,63 @@
 $color-black: #333;
-
 $color-text: $color-black;
+$color-grey-light: #ccc;
+
+
+
 
 
 // List of categorys
 $category-list: 'text', 'audio', 'video', 'code';
 // List of colors for each category
-$category-color-list: #3caee5, #ff783a, #e52d27, #ebdd2c;
+$category-color-list: #3caee5, darken(#48CFAD, 5%), #DA4453, #FFCE54;
+// Amount of category colors
+$category-color-list-amount: length($category-color-list);
+
+
+
+
+
+/*
+ * Body
+ */
+// Background color
+$body-background: #f2f2f2;
+
+
+
+
+
+/*
+ * Border
+ */
+// Top border
+$border-top: .5em solid $color-text;
+
+
+
+
+
+/*
+ * Headings
+ */
+$h3-margin: 1em 0 .5em 0;
+
+
+
+
+
+/*
+ * Animations
+ */
+$animation-flash: .65s;
+
+
+
+
+
+/*
+ * Elements on the stream
+ */
+// Factor
+$element-transition: .75;
+

@@ -5,13 +5,15 @@ header {
     left: 0;
     z-index: 1338;
     width: 100%;
-    padding: .5em 0;
+    padding: .35em 0;
+    background: #fff;
+    overflow: hidden;
 
-    background: $color-text;
-    color: #fff;
+    @include breakpoint(tiny) {
+      padding: .15em 0;
+    }
 
     a {
-      color: #fff;
       border-bottom: none;
     }
   }

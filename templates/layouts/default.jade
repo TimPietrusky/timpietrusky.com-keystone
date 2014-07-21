@@ -8,9 +8,27 @@ html
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="author" content="Tim Pietrusky")
+    meta(name="robots" content="index,follow")
+    meta(name="revisit-after" content="1 days")
+    meta(name="description" content="I love the web: My platform of choice for everything - Audio, Code, Text & Video")
 
-    title= title || 'megatim'
-    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+    //- Add meta for posts
+    if typeof(data) !== 'undefined' && data.post && typeof(data.post.meta) !== 'undefined'
+      meta(og:title=data.post.title)
+      meta(og:url="http://timpietrusky.com/" + data.post.slug)
+
+      //- Add meta description if it exists
+      if data.post.meta.description
+        meta(og:description=data.post.meta.description)
+
+      //- Add meta image if it exists
+      if typeof(data.post.meta.image.filename) !== 'undefined'
+        meta(og:image="http://timpietrusky.com/images/" + data.post.meta.image.filename)
+
+
+    title= title || 'Tim Pietrusky'
+    link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
 
     link(href="/css/styles.css", rel="stylesheet")
 
@@ -31,16 +49,22 @@ html
     header.cf(data-role="navigation")
       div.wrapper.cf
 
-        div.g.one-whole
+        div.g.one-whole.tiny-no-spacing
           //- Navlinks in ./routes/middleware.js
           nav.main-navigation(data-js='navigation')
               - var counter = 0
               ul
                 each link in navLinks
                   if (counter == 0) 
-                    li(class=(section == link.key ? 'active' : null)): h1: a(href=link.href data-category=link.key)= link.label
+                    li
+                      h1
+                        a(href=link.href data-category=link.key data-css=(section == link.key ? 'active' : null))= link.label
+                        .separator
+                          each i in new Array(3)
+                            span
+                              | &gt;
                   else 
-                    li(class=(section == link.key ? 'active' : null)): a(href=link.href data-category=link.key)= link.label
+                    li: a(href=link.href data-category=link.key data-css=(section == link.key ? 'active' : null))= link.label
                   
                   - counter = counter + 1
                   
@@ -73,7 +97,7 @@ html
     footer.cf
       div.wrapper.cf
         div.g.one-whole
-          | 1985 - 2014 by <a href="http://twitter.com/TimPietrusky">@TimPietrusky</a>
+          | &copy; 2014 | <a href="/about">About</a>
 
 
 

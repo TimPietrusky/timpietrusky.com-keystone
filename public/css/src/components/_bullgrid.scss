@@ -193,6 +193,17 @@ $bullgrid-default-spacing: 1em;
 
 
 
+  /*
+   * No spacing
+   */
+   .#{$namespace}no-spacing {
+     padding-left: 0;
+   }
+
+
+
+
+
   /**
    * Whole
    */
