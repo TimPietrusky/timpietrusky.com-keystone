@@ -11,3 +11,9 @@ var navigation = new Navigation();
 if (document.getElementsByTagName('code').length > 0) {
   hljs.initHighlighting();
 }
+
+
+var myLoader = new LazyLuke({
+  elements : '[data-js-src]',
+  srcAttribut : 'data-js-src'
+});

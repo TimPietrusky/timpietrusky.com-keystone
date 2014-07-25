@@ -1,11 +1,19 @@
 iframe {
   width: 100%;
+  
+  &.loading {
+    background: #ccc;
+  }
 
   &.youtube {
+    @extend .loading;
+
     height: 600px;
   }
 
   &.soundcloud {
+    @extend .loading;
+
     height: 650px;
   }
 
