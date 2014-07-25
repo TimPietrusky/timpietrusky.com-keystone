@@ -134,8 +134,9 @@ blockquote {
  */
 code {
   white-space: pre;
+  overflow: auto;
 }
 
 pre {
-  overflow: auto;
+  overflow: hidden;
 }
