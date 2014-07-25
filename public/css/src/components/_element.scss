@@ -14,7 +14,11 @@
   );
 
   @include breakpoint(tiny) {
-    height: 10em;
+    height: 6em;
+
+    h2 {
+      font-size: 1.15em;
+    }
   }
 
   @include breakpoint(small) {
@@ -54,13 +58,15 @@
   visibility: visible;
 
   @include transition(
-    visibility .25s * $element-transition ease-in-out,
+    visibility .35s * $element-transition ease-in-out,
     opacity .35s * $element-transition ease-in-out,
-    width .35s * $element-transition ease-in-out,
+    width .15s * $element-transition ease-in-out,
     margin .25s * $element-transition ease-in-out,
     transform .35s * $element-transition ease-in-out,
     filter .35s * $element-transition ease-in-out
   );
+
+
 
   a {
     &:active {
@@ -69,6 +75,8 @@
       }
     }
   }
+
+
 
   // Hide the element
   &[data-css='hide'] {
@@ -80,11 +88,13 @@
     filter: blur(5px);
     -webkit-filter: blur(5px);
 
+    @include transform(scale(.15, .15) translate(15%, 15%));
+
     @include breakpoint(tiny) {
       filter: none; 
       -webkit-filter: none;
-    }
 
-    @include transform(scale(.15, .15) translate(15%, 15%));
+      @include transform(scale(.15, .15));
+    }
   }
 }
