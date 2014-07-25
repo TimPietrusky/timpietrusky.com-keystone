@@ -9,6 +9,8 @@ header {
     background: #fff;
     overflow: hidden;
 
+    @include transform(translate3d(0, 0, 0));
+
     @include breakpoint(tiny) {
       padding: .15em 0;
     }
