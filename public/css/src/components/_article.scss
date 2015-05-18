@@ -1,7 +1,12 @@
 .article {
   position: relative;
   max-width: 50em;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  @include animation(flash $animation-flash 1 ease-in-out forwards);
+
+  @include breakpoint(tiny) {
+    @include animation(none);
+  }
 
   // Auto generate styles for each category
   @for $i from 1 through length($category-list) {
@@ -10,23 +15,6 @@
 
     &[data-category='#{$name}'] {
   
-      // // Stripe on the left
-      // &:before {
-      //   content: '';
-      //   position: fixed;
-      //   z-index: -1;
-      //   left: 0;
-      //   top: 0;
-      //   height: 100%;
-      //   width: 1em;
-      //   background: rgba(darken($color, 15%), .35);
-      //   display: none;
-
-      //   @include breakpoint(large) {
-      //     display: block;
-      //   }
-      // }
-
       a {
         border-bottom-color: rgba($color, .85);
 
@@ -60,8 +48,6 @@
           padding: .5em;
           background: rgba(darken($color, 5%), .85);
           color: $body-background;
-          // border-bottom: $border-top;
-          // border-bottom-color: rgba(darken($color, 0), .25);
         }
       }
     }
@@ -87,10 +73,5 @@
   .date {
     margin: .5em 0 2.5em 0;
     color: rgba($color-black, .25);
-  }
-
-  // Only used for animation, because otherwise the pseudo element on .article is placed like shit
-  .articlewrapper {
-    @include animation(flash $animation-flash 1 ease-in-out forwards);
   }
 }

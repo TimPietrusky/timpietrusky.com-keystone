@@ -2,6 +2,7 @@ iframe {
   width: 100%;
   
   &.loading {
+    position: relative;
     background: #ccc;
   }
 

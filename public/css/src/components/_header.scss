@@ -1,5 +1,6 @@
 header {
-  &[data-role="navigation"] {
+
+  &.navigation {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,7 +10,6 @@ header {
     background: #fff;
     overflow: hidden;
     box-shadow: 0 0 0 2px rgba($body-background, .75);
-    // border-bottom: .5em solid rgba($body-background, .5);
 
     @include transform(translate3d(0, 0, 0));
 

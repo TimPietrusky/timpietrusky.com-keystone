@@ -42,3 +42,14 @@
     }
   }
 }
+
+
+    a {
+      &[data-category='about'] {
+
+        &[data-css='active'] {
+          color: reverse-lightness($color-text);
+          background: $color-text; 
+        }
+      }
+    }

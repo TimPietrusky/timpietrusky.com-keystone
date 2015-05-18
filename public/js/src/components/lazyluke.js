@@ -7,7 +7,7 @@ function LazyLuke(args) {
   
   // Elements
   this.elements = this.d.querySelectorAll(args.elements);
-  
+
   // The String to select the elements
   this.elementSelector = args.elements;
   
@@ -51,7 +51,7 @@ LazyLuke.prototype = {
   
   // Load the elements if they are visible and not loaded yet
   load : function() {
-    
+
     // There are still elements to load
     if (this.d.querySelectorAll(this.elementSelector).length > 0) {
       
@@ -69,8 +69,8 @@ LazyLuke.prototype = {
               // Get the value of "data-js-src" and use it as the new src
               el.src = el.getAttribute(this.srcAttribut);
               // Remove the attribute from the element
-              el.removeAttribute(this.srcAttribut);
-            } 
+              el.removeAttribute(this.srcAttribut); 
+            }
 
           } // IFRAME
 
@@ -78,7 +78,7 @@ LazyLuke.prototype = {
 
       } // for
 
-    // Every element was loaded
+    // Every element was loaded 
     } else {
       // Remove the listener
       this.removeListener();

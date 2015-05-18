@@ -13,6 +13,9 @@ if (document.getElementsByTagName('code').length > 0) {
 }
 
 
+
+
+
 var myLoader = new LazyLuke({
   elements : '[data-js-src]',
   srcAttribut : 'data-js-src'

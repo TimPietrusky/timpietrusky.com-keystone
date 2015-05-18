@@ -46,12 +46,15 @@ html
   body
 
     //- HEADER
-    header.cf(data-role="navigation")
+    header.cf.navigation
       div.wrapper.cf
 
         div.g.one-whole.tiny-no-spacing
           //- Navlinks in ./routes/middleware.js
-          nav.main-navigation(data-js='navigation')
+          nav.main-navigation
+
+            div(data-js='navigation')
+
               - var counter = 0
               ul
                 each link in navLinks
@@ -67,6 +70,12 @@ html
                     li: a(href=link.href data-category=link.key data-css=(section == link.key ? 'active' : null))= link.label
                   
                   - counter = counter + 1
+
+            ul
+                li
+                  a(href='/about' data-category='about' data-css=(section == 'about' ? 'active' : null)) About
+
+
                   
 
 
@@ -91,13 +100,6 @@ html
           //- The content block should contain the body of your template's content
           block content
 
-
-      
-    //- FOOTER
-    footer.cf
-      div.wrapper.cf
-        div.g.one-whole
-          | &copy; 2014 | <a href="/about">About</a>
 
 
 

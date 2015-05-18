@@ -6,28 +6,27 @@ block content
 		each cat in data.post.categories
 			- ultracategory = cat.key
 		article.article(data-category="#{ultracategory}")
-			.articlewrapper
-				if !data.post
-					h2 Invalid Post.
-				else
-					header
-						h2= data.post.title
-						h5.date
-							if data.post.publishedDate
-								| #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
-					.post
-						if data.post.image.exists
-							.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
-						!= data.post.content.full
+			if !data.post
+				h2 Invalid Post.
+			else
+				header
+					h2= data.post.title
+					h5.date
+						if data.post.publishedDate
+							| #{data.post._.publishedDate.format('MMMM Do, YYYY')} 
+				.post
+					if data.post.image.exists
+						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
+					!= data.post.content.full
 
 
 
-				// Integrate disqus comments
-				div.comments
-					h3 Comments
-					div#disqus_thread
-						
+			// Integrate disqus comments
+			div.comments
+				h3 Comments
+				div#disqus_thread
+					
 
 
-				// Integrate CodePen
-				script(async src='http://codepen.io/assets/embed/ei.js')
+			// Integrate CodePen
+			script(async src='http://codepen.io/assets/embed/ei.js')

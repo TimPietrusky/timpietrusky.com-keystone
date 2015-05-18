@@ -1,0 +1,14 @@
+.flex__container {
+  display: -moz-inline-flex;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  width: 100%;
+}
+
+// create loop, list and function
+
+.flex-one {
+  -moz-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
