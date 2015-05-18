@@ -12,7 +12,7 @@
       margin: 0 .25em;
 
       @include breakpoint(tiny) {
-        width: 25%;
+        width: 20%;
         text-align: center;
         margin: 0;
       }
@@ -25,12 +25,12 @@
           padding-bottom: .25em;
         }
       }
-      
+
       a {
         padding: .5em;
 
         @include breakpoint(tiny) {
-          padding: .35em;
+          padding: .15em;
         }
       }
 
@@ -43,13 +43,23 @@
   }
 }
 
+/*
+ * HACKS
+ */
+a {
+  &[data-category='about'] {
 
-    a {
-      &[data-category='about'] {
-
-        &[data-css='active'] {
-          color: reverse-lightness($color-text);
-          background: $color-text; 
-        }
-      }
+    &[data-css='active'] {
+      color: reverse-lightness($color-text);
+      background: $color-text; 
     }
+  }
+}
+
+.sub-navigation {
+  li {
+    @include breakpoint(tiny) {
+      width: 20% !important;
+    }
+  }
+}
