@@ -6,7 +6,7 @@ $smallest-unit: .0625em;
 $all-breakpoints: (
   ('large', 110em),
   ('medium', 50em),
-  ('small', 35em),
+  ('small', 37em),
   ('tiny') // Last value should not have a value, its min value will essentially be 0
 );
 

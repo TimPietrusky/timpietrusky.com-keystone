@@ -69,9 +69,10 @@
 
 
   a {
-    &:active {
+    &:active,
+    .active {
       .element {
-        @include animation(flash-reverse $animation-flash 1 ease-in-out forwards);
+        @include animation(flash-reverse $animation-flash-reverse 1 ease-in-out forwards);
       }
     }
   }

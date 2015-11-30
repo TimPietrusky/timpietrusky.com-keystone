@@ -13,18 +13,25 @@ html
     meta(name="revisit-after" content="1 days")
     meta(name="description" content="I love the web: My platform of choice for everything - Audio, Code, Text & Video")
 
+
     //- Add meta for posts
     if typeof(data) !== 'undefined' && data.post && typeof(data.post.meta) !== 'undefined'
-      meta(og:title=data.post.title)
-      meta(og:url="http://timpietrusky.com/" + data.post.slug)
+      meta(property='og:title' content=data.post.title)
+      meta(property='og:url' content="http://timpietrusky.com/" + data.post.slug)
 
       //- Add meta description if it exists
       if data.post.meta.description
-        meta(og:description=data.post.meta.description)
+        meta(property='og:description' content=data.post.meta.description)
 
       //- Add meta image if it exists
       if typeof(data.post.meta.image.filename) !== 'undefined'
-        meta(og:image="http://timpietrusky.com/images/" + data.post.meta.image.filename)
+        meta(property='og:image' content="http://timpietrusky.com/images/" + data.post.meta.image.filename)
+        meta(name='twitter:card' content='summary_large_image')
+        meta(name='twitter:site' content='@TimPietrusky')
+        meta(name='twitter:creator' content='@TimPietrusky')
+        meta(name='twitter:title' content=data.post.title)
+        meta(name='twitter:description' content=data.post.meta.description)
+        meta(name='twitter:image' content='http://timpietrusky.com/images/' + data.post.meta.image.filename)
 
 
     title= title || 'Tim Pietrusky'

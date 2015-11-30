@@ -15,9 +15,8 @@
 
 
 @include keyframes(flash-reverse) {
-  0%, 40% {
+  0% {
     opacity: 1;
-    @include transform(auto);
   }
 
   100% {
