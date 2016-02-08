@@ -27,10 +27,10 @@ exports.initLocals = function(req, res, next) {
 	
 	locals.navLinks = [
 		{ label: 'Tim Pietrusky', key: 'blog', href: '/#' },
-		{ label: 'Audio', key: 'audio', href: '/#audio' },
-		{ label: 'Code', key: 'code', href: '/#code' },
-		{ label: 'Text', key: 'text', href: '/#text' },
-		{ label: 'Video', key: 'video', href: '/#video' }
+    { label: 'Text', key: 'text', href: '/#text' },
+    { label: 'Code', key: 'code', href: '/#code' },
+    { label: 'Video', key: 'video', href: '/#video' },
+		{ label: 'Audio', key: 'audio', href: '/#audio' }
 	];
 	
 	locals.user = req.user;

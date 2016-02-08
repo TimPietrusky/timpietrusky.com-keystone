@@ -1,17 +1,64 @@
 .element {
   position: relative;
-  height: 15em;
-  padding: .75em;
+  height: 8em;
+  padding: .75em .75em .75em .75em;
   margin: 0 0 1em 0;
   background: #fff;
-  overflow: hidden;
-  border-bottom: 2px solid $color-grey-light;
 
-  @include animation(flash $animation-flash 1 ease-in-out forwards);
-  @include transition(
-    background $animation-flash ease-out, 
-    color .25s ease-out
-  );
+  transition: background .25s ease-out;
+
+
+  
+  /**
+   * Holds the categories information for every element
+   */
+  &:after {
+    z-index: -1;
+    position: absolute;
+    top: -3%;
+    height: 3%;
+    width: .5em * 4;
+    content: '';
+  }
+
+
+  h2 {
+    transition: color .25s ease-out;
+  }
+
+
+  &:hover {
+    background: rgba(33, 33, 33, .95);
+
+    h2,
+    a,
+    .meta {
+      color: #fff;
+      opacity: 1;
+    }
+  } 
+
+
+
+
+
+  /**
+   * Category colors
+   */
+  @include categories('text' 'code');
+  @include categories('text' 'code' 'video');
+  @include categories('text' 'code' 'video' 'audio');
+  @include categories('text' 'video');
+  @include categories('text' 'video' 'audio');
+  @include categories('text' 'audio');
+
+
+  @include categories('code' 'video');
+  @include categories('code' 'video' 'audio');
+  @include categories('code' 'audio');
+
+  @include categories('video' 'audio');
+
 
   @include breakpoint(tiny) {
     height: 6em;
@@ -22,7 +69,7 @@
   }
 
   @include breakpoint(small) {
-    height: 10em;
+    height: 8em;
 
     h2 {
       font-size: 1.15em;
@@ -33,38 +80,32 @@
     border-bottom: none;
   }
 
-  h2,
-  .meta {
-    @include transition(
-      color .25s ease-out
-    );
+  h2 {
+    // @include transition(
+    //   color .25s ease-out
+    // );
   }
 
 
-  .meta {
-    position: absolute;
-    bottom: .5em;
-    font-size: .85em;
-    opacity: .75;
-  }
+
+
 }
 
 
 
 
-
+// The wrapper element for "element"
 [data-js='element'] {
   opacity: 1;
   visibility: visible;
 
-  @include transition(
+  /*transition:
     visibility .35s * $element-transition ease-in-out,
     opacity .35s * $element-transition ease-in-out,
     width .15s * $element-transition ease-in-out,
     margin .25s * $element-transition ease-in-out,
     transform .35s * $element-transition ease-in-out,
-    filter .35s * $element-transition ease-in-out
-  );
+  ;*/
 
 
 
@@ -72,7 +113,7 @@
     &:active,
     .active {
       .element {
-        @include animation(flash-reverse $animation-flash-reverse 1 ease-in-out forwards);
+        // animation: flash-reverse $animation-flash-reverse 1 ease-in-out forwards;
       }
     }
   }
@@ -81,21 +122,27 @@
 
   // Hide the element
   &[data-css='hide'] {
+    z-index: -1337;
     opacity: 0;
     visibility: hidden;
     width: 0;
     margin: 0;
     padding: 0;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
 
-    @include transform(scale(.15, .15) translate(15%, 15%));
+    //transform: scale(.15, .15) translate(0, 0);
+    transform: translate(0, 0);
+
+    // The element inside the wrapper element
+    .element {
+
+      &:after {
+        display: none;
+      }
+
+    }
 
     @include breakpoint(tiny) {
-      filter: none; 
-      -webkit-filter: none;
-
-      @include transform(scale(.15, .15));
+      //transform: scale(.15, .15);
     }
   }
 }

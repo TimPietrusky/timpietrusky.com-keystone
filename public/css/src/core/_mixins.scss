@@ -1,26 +1,38 @@
-/**
- *
- * Animation 
- *
- */
-@mixin animation($value) {
-  -webkit-animation: unquote($value);
-     -moz-animation: unquote($value);
-       -o-animation: unquote($value);
-          animation: unquote($value);
-}
+@mixin categories($categories) {
 
+  $background: "";
+  $selector: "";
 
+  @for $i from 1 through length($categories) {
 
+    $position-one: 100 / length($categories) * ($i - 1);
+    $position-two: 100 / length($categories) * $i;
 
-/**
- *
- * Keyframes
- *
- */
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} { @content; }
-     @-moz-keyframes #{$name} { @content; }
-       @-o-keyframes #{$name} { @content; }
-          @keyframes #{$name} { @content; }
+    // Get the name of the current category
+    $category: nth($categories, $i);
+
+    // Create the selector based on all categories
+    $selector: $selector + $category + ",";
+
+    // Create the colors for the linear-gradient
+    $background: 
+      $background 
+      + rgba(darken(map-get($category-map, $category), 0), 1) + " " + $position-one + "%" + ","
+      + rgba(darken(map-get($category-map, $category), 0), 1) + " " + $position-two + "%" + ","
+    ;
+
+    // $background: $background + rgba(darken(map-get($category-map, $category), 5%), 1) + ",";
+  }
+
+  // Remove quotes
+  $background: unquote($background); 
+
+  // Remove last character
+  $background: str-slice($background, 0, str-length($background) - 1);
+
+  &[data-category^='#{$selector}'] {
+    &:after {
+      background: linear-gradient(90deg, $background);
+    }
+  }
 }

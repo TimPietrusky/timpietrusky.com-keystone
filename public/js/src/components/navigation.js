@@ -1,6 +1,5 @@
-Navigation = (function() {
-    
-  function Navigation(args) {
+function Navigation(args) {
+
     try {
       // Get the dropdown
       this.el = document.querySelector('[data-js="navigation"]');
@@ -35,7 +34,7 @@ Navigation = (function() {
         this.element_active.setAttribute('data-css', 'active');
 
         // Find elements to hide
-        var elements = this.contentArea.querySelectorAll('[data-js="element"]:not([data-category="'+parameter_category+'"])');
+        var elements = this.contentArea.querySelectorAll('[data-js="element"]:not([data-category*="'+parameter_category+'"])');
 
         // Filter elements if the category is not blog (parent of all elements)
         if (parameter_category != "blog") {
@@ -78,6 +77,14 @@ Navigation = (function() {
             // Remove active attribute
             this.element_active.removeAttribute('data-css');
 
+            // Show elements if the category is blog
+            if (category == "blog") {
+              // Iterate over all elements and show them
+              for (var j = 0; j < elements_all.length; j++) {
+                elements_all[j].removeAttribute('data-css');
+              }
+            }
+
             // There are no elements
             if (elements_all.length == 0) {
 
@@ -86,9 +93,12 @@ Navigation = (function() {
               // Prevent default action
               e.preventDefault();
 
-              // Iterate over all elements and show them
-              for (var j = 0; j < elements_all.length; j++) {
-                elements_all[j].removeAttribute('data-css');
+              // Don't hide elements if the category is blog
+              if (category != "blog") {
+                // Iterate over all elements and show them
+                for (var j = 0; j < elements_all.length; j++) {
+                  elements_all[j].setAttribute('data-css', 'hide');
+                }
               }
 
               // Save the active element
@@ -98,13 +108,13 @@ Navigation = (function() {
               this.element_active.setAttribute('data-css', 'active');
 
               // Find elements to hide
-              var elements = this.contentArea.querySelectorAll('[data-js="element"]:not([data-category="'+category+'"])');
+              var elements = this.contentArea.querySelectorAll('div[data-js="element"][data-category*="'+category+'"]');
 
               // Filter elements if the category is not blog (parent of all elements)
               if (category != "blog") {
                 // Iterate over all elements and hide them
                 for (var j = 0; j < elements.length; j++) {
-                  elements[j].setAttribute('data-css', 'hide');
+                  elements[j].removeAttribute('data-css');
                 }
               } else {
                 // Reset hash for home
@@ -119,7 +129,7 @@ Navigation = (function() {
             e.preventDefault();
 
             // Iterate over all elements and show them
-            if (category != "blog") {
+            //if (category == "blog") {
               for (var j = 0; j < elements_all.length; j++) {
                 elements_all[j].removeAttribute('data-css');
               }
@@ -132,7 +142,7 @@ Navigation = (function() {
 
               // Remove active attribute
               this.element_active.removeAttribute('data-css');
-            }
+            //}
 
           }
 
@@ -140,7 +150,7 @@ Navigation = (function() {
       }
     
     } catch(e) {}
-  };
 
-  return Navigation;
-})();
+};
+
+module.exports = Navigation;

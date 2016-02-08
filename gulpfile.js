@@ -4,11 +4,10 @@ var gulp = require('gulp'),
 	  watch = require('gulp-watch'),
 	  concat = require('gulp-concat'),
     scp = require('gulp-scp2'),
-    sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
     uglify = require('gulp-uglify'),
-    compass = require('gulp-compass'),
-    minifyCSS = require('gulp-minify-css')
+    minifyCSS = require('gulp-minify-css'),
+    sass = require('gulp-sass')
 ;
 
 
@@ -49,23 +48,11 @@ gulp.task('js', function() {
 
 
 
-
-
-// gulp.task('sass', function () {
-//     gulp.src('./public/css/src/styles.scss')
-//       .pipe(plumber())
-//       .pipe(compass())
-//       .pipe(gulp.dest('./public/css/'));
-// });
-
-gulp.task('compass', function() {
+gulp.task('sass', function () {
   gulp.src(paths.sass)
-  .pipe(compass({
-    css: './public/css',
-    sass: './public/css/src'
-  }))
-  .pipe(minifyCSS())
-  .pipe(gulp.dest('./public/css'));
+    .pipe(sass().on('error', sass.logError))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('./public/css'));
 });
 
 
@@ -80,6 +67,6 @@ gulp.task('default', function () {
 
   // watch for sass changes
   gulp.watch(paths.sass, function() {
-    gulp.run('compass');
+    gulp.run('sass');
   });
 });

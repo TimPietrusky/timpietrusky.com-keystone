@@ -1,12 +1,12 @@
-@include keyframes(flash) {
+@keyframes flash {
   0%, 60% {
     opacity: 0;
-    @include transform(scale(-.25, -.25));
+    transform: scale(-.25, -.25);
   }
 
   100% {
     opacity: 1;
-    @include transform(auto);
+    transform: auto;
   }
 }
 
@@ -14,14 +14,14 @@
 
 
 
-@include keyframes(flash-reverse) {
+@keyframes flash-reverse {
   0% {
     opacity: 1;
   }
 
   100% {
     opacity: 0;
-    @include transform(scale(-.25, -.25));
+    transform: scale(-.25, -.25);
   }
 }
 
@@ -29,7 +29,7 @@
 
 
 
-@include keyframes(lightshow) {
+@keyframes(lightshow) {
   @for $i from 1 through ($category-color-list-amount + 1) {
     #{(100% / ($category-color-list-amount)) * ($i - 1)} {
       color: nth($category-color-list, ($i % $category-color-list-amount) + 1);

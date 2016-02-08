@@ -5,9 +5,6 @@ mixin post(post, category)
 		a(href=post.slug)
 			.element(data-ks-editable=editable(user, { list: 'Post', id: post.id }) data-category="#{category}")
 				h2= post.title
-				div.meta
-					if post.publishedDate
-						| #{post._.publishedDate.format('MMMM YYYY')} 
 				if post.image.exists
 					img(src=post._.image.fit(160,160)).img.pull-right
 				p!= post.content.brief
@@ -26,7 +23,7 @@ block content
 					each post in data.posts.results
 						- ultracategory = ""
 						each cat in post.categories
-							- ultracategory = cat.key
+							- ultracategory += cat.key + ","
 						+post(post, ultracategory)
 				else
 					if data.category

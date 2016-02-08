@@ -2,10 +2,10 @@
   position: relative;
   max-width: 50em;
   overflow-x: hidden;
-  @include animation(flash $animation-flash 1 ease-in-out forwards);
+  // @include animation(flash $animation-flash 1 ease-in-out forwards);
 
   @include breakpoint(tiny) {
-    @include animation(none);
+    // @include animation(none);
   }
 
   // Auto generate styles for each category

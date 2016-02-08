@@ -1,4 +1,4 @@
-$color-black: #333;
+$color-black: #666;
 $color-text: $color-black;
 $color-grey-light: #ccc;
 
@@ -12,6 +12,15 @@ $category-list: 'text', 'audio', 'video', 'code';
 $category-color-list: #3caee5, darken(#48CFAD, 5%), #DA4453, #FFCE54;
 // Amount of category colors
 $category-color-list-amount: length($category-color-list);
+
+
+
+$category-map: (
+  'text': nth($category-color-list, 1), 
+  'audio': nth($category-color-list, 2), 
+  'video': nth($category-color-list, 3), 
+  'code': nth($category-color-list, 4)
+);
 
 
 
@@ -61,4 +70,5 @@ $animation-flash-reverse: .15s;
  */
 // Factor
 $element-transition: .75;
+
 

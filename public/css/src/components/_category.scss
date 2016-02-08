@@ -4,31 +4,10 @@
 
   .element {
 
-    &[data-category='#{$name}'] {
-      border-bottom-color: rgba(darken($color, 20%), .15);
-      // background: rgba($color, .115);
-      // box-shadow: 
-      //   inset 0 0 0 .2em rgba(darken($color, 15%), .35)
-      // ;
+    &[data-category*='#{$name}'] {
 
-      // Element
-      &:hover {
-        background: rgba(darken($color, 5%), .85);
-        // z-index: 1337;
-        // @include transform(scale(1.15, 1.15));
-
-        h2,
-        a,
-        .meta {
-          color: #fff;
-          opacity: 1;
-        }
-      }
-
-      h2,
-      a,
-      .meta {
-        color: rgba(darken($color, 5%), .85);
+      &:after {
+        background: rgba(darken($color, 5%), 1);
       }
     }
 
@@ -50,6 +29,5 @@
     }
 
   } // .main-navigation
-
 
 }

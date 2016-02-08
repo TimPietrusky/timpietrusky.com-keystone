@@ -4,7 +4,7 @@
 function LazyLuke(args) {
   this.w = window;
   this.d = window.document;
-  
+
   // Elements
   this.elements = this.d.querySelectorAll(args.elements);
 
@@ -102,3 +102,6 @@ LazyLuke.prototype = {
   }
   
 }; // LazyLuke
+
+
+module.exports = LazyLuke;

@@ -43,7 +43,7 @@ h1 {
       > span {
         @for $i from 0 through $category-color-list-amount {
           &:nth-child(#{$category-color-list-amount}n+#{$i}) {
-            @include animation(lightshow linear .85s infinite backwards (-.85s - (-.5s / $category-color-list-amount * $i)));
+            animation: lightshow linear .85s infinite backwards (-.85s - (-.5s / $category-color-list-amount * $i));
           }
         }
       }

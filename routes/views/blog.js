@@ -24,9 +24,16 @@ exports = module.exports = function(req, res) {
 			if (err || !results.length) {
 				return next(err);
 			}
+
 			
 			locals.data.categories = results;
-			
+
+      // console.log(locals.data.categories);
+
+      // locals.data.categories.sort(function(m1, m2) { return m1.addedAt - m2.addedAt; });
+
+      // console.log(locals.data.categories);
+
 			// Load the counts for each category
 			async.each(locals.data.categories, function(category, next) {
 				
@@ -68,13 +75,16 @@ exports = module.exports = function(req, res) {
 			.where('state', 'published')
 			.sort('-publishedDate')
 			.populate('author categories');
-		
+
 		if (locals.data.category) {
 			q.where('categories').in([locals.data.category]);
 		}
 		
-		q.exec(function(err, results) {
-			locals.data.posts = results;
+		q.exec(function(err, posts) {
+
+      // posts.categories.sort(function(m1, m2) { return m1.addedAt - m2.addedAt; });
+
+			locals.data.posts = posts;
 			next(err);
 		});
 		
