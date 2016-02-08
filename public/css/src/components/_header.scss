@@ -9,9 +9,7 @@ header {
     padding: .35em 0;
     background: #fff;
     overflow: hidden;
-    box-shadow: 0 0 0 2px rgba($body-background, .75);
-
-    // @include transform(translate3d(0, 0, 0));
+    box-shadow: 0 0 0 1px rgba($body-background, .75);
 
     @include breakpoint(tiny) {
       padding: .15em 0;

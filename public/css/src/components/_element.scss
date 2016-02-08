@@ -4,8 +4,7 @@
   padding: .75em .75em .75em .75em;
   margin: 0 0 1em 0;
   background: #fff;
-
-  transition: background .25s ease-out;
+  border-bottom: 1px solid $color-grey-light;
 
 
   
@@ -23,7 +22,7 @@
 
 
   h2 {
-    transition: color .25s ease-out;
+    transition: color .35s ease-out;
   }
 
 
@@ -80,31 +79,17 @@
     border-bottom: none;
   }
 
-  h2 {
-    // @include transition(
-    //   color .25s ease-out
-    // );
-  }
-
-
-
-
 }
 
 
 
 // The wrapper element for "element"
 [data-js='element'] {
-  opacity: 1;
   transform: scale(1, 1);
-  transition:
-    opacity .35s ease-in-out 0s
-  ;
 
   // Hide the element
   &[data-css='hide'] {
     z-index: -1337;
-    opacity: 0;
     width: 0;
     height: 0;
     margin: 0;

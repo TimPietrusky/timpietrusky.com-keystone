@@ -1,0 +1,30 @@
+.comment {
+
+  h3 {
+    margin-top: 0;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+}
+
+button {
+  // Comments button
+  &.load-comments {
+    font-size: 2.5em;
+    width: 100%;
+    margin: 1em 0 2em 0;
+    padding: .5em;
+    cursor: pointer;
+    background: $color-black;
+    color: #fff;
+    
+
+    &:hover {
+      background: #fff;
+      color: $color-black;
+    }
+  }
+}

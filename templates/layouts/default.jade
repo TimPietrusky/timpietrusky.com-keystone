@@ -74,7 +74,7 @@ html
                             span
                               | &gt;
                   else 
-                    li: a(href=link.href data-category=link.key data-css=(section == link.key ? 'active' : null))= link.label
+                    li: a(href=link.href data-category=link.key)= link.label
                   
                   - counter = counter + 1
 
@@ -118,7 +118,7 @@ html
       function downloadJSAtOnload() {
         setTimeout(function() {
           var element = document.createElement('script');
-          element.src = '/js/scripts.min.js?20160204';
+          element.src = '/js/scripts.min.js?20160208';
           document.body.appendChild(element);
         }, 50);
       }

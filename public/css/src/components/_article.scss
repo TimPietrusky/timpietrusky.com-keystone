@@ -2,64 +2,26 @@
   position: relative;
   max-width: 50em;
   overflow-x: hidden;
-  // @include animation(flash $animation-flash 1 ease-in-out forwards);
+  color: $color-black-dark;
 
-  @include breakpoint(tiny) {
-    // @include animation(none);
-  }
-
-  // Auto generate styles for each category
-  @for $i from 1 through length($category-list) {
-    $name: nth($category-list, $i);
-    $color: nth($category-color-list, $i);
-
-    &[data-category='#{$name}'] {
-  
-      a {
-        border-bottom-color: rgba($color, .85);
-
-        &:hover {
-          color: $color;
-          border-bottom-color: $color;
-        }
-      }
-
-      h2 {
-        color: rgba(darken($color, 5%), .85);
-      }
-
-      blockquote {
-        padding: 1em;
-        margin: 0 0 0 0;
-        color: darken($color, 25%);
-        background: reverse-lightness(darken($color, 25%));
-      }
-
-      // Comments
-      .comments {
-        border-top: none;
-
-        box-shadow: 
-          0 0 0 .5em $body-background,
-          0 0 0 1em rgba(darken($color, 0), .15)
-        ;
-
-        h3 {
-          padding: .5em;
-          background: rgba(darken($color, 5%), .85);
-          color: $body-background;
-        }
-      }
-    }
-
+  // Comments
+  .comment {
+    margin-top: 3.5em;
   }
 
   a {
     padding-bottom: .085em;
+    color: #0000ee;
+    border-bottom-color: rgba(#0000ee, .85);
+
+    &:hover {
+      color: reverse-lightness(darken(#0000ee, 25%));
+      border-bottom-color: reverse-lightness(darken(#0000ee, 25%));
+    }
   }
 
   h2 {
-    font-size: 2.15em;
+    font-size: 2.95em;
   }
 
   // Comments & others
@@ -74,4 +36,17 @@
     margin: .5em 0 2.5em 0;
     color: rgba($color-black, .25);
   }
+
+
+  blockquote {
+    padding: 1em;
+    margin: 0 0 0 0;
+    color: darken($color-black, 25%);
+    background: reverse-lightness(darken($color-black, 25%));
+  }
+}
+
+
+#disqus_thread {
+  min-height: 250px;
 }

@@ -33,7 +33,7 @@
 
     "//": "Watch for JS changes",
     "//": "-o 'uglifyjs > public/js/scripts.min.js'",
-    "watch:js" : "watchify public/js/src/*.js -o public/js/scripts.min.js -t [ babelify --presets [ es2015 ] ]",
+    "watch:js" : "watchify public/js/src/*.js -o 'uglifyjs > public/js/scripts.min.js' -t [ babelify --presets [ es2015 ] ]",
 
     "//" : "Watch for SCSS changes",
     "watch:css": "node-sass -w public/css/src/ -o public/css/"
