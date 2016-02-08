@@ -93,56 +93,22 @@
 
 
 
-
 // The wrapper element for "element"
 [data-js='element'] {
   opacity: 1;
-  visibility: visible;
-
-  /*transition:
-    visibility .35s * $element-transition ease-in-out,
-    opacity .35s * $element-transition ease-in-out,
-    width .15s * $element-transition ease-in-out,
-    margin .25s * $element-transition ease-in-out,
-    transform .35s * $element-transition ease-in-out,
-  ;*/
-
-
-
-  a {
-    &:active,
-    .active {
-      .element {
-        // animation: flash-reverse $animation-flash-reverse 1 ease-in-out forwards;
-      }
-    }
-  }
-
-
+  transform: scale(1, 1);
+  transition:
+    opacity .35s ease-in-out 0s
+  ;
 
   // Hide the element
   &[data-css='hide'] {
     z-index: -1337;
     opacity: 0;
-    visibility: hidden;
     width: 0;
+    height: 0;
     margin: 0;
     padding: 0;
-
-    //transform: scale(.15, .15) translate(0, 0);
-    transform: translate(0, 0);
-
-    // The element inside the wrapper element
-    .element {
-
-      &:after {
-        display: none;
-      }
-
-    }
-
-    @include breakpoint(tiny) {
-      //transform: scale(.15, .15);
-    }
+    transform: scale(0, 0);
   }
 }
