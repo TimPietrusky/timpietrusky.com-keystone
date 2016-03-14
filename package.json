@@ -19,7 +19,8 @@
     "parallelshell": "latest",
     "uglify-js": "latest",
     "watch": "latest",
-    "watchify": "latest"
+    "watchify": "latest",
+    "clean-css": "latest"
   },
 
   "engines": {
@@ -36,7 +37,13 @@
     "watch:js" : "watchify public/js/src/*.js -o 'uglifyjs > public/js/scripts.min.js' -t [ babelify --presets [ es2015 ] ]",
 
     "//" : "Watch for SCSS changes",
-    "watch:css": "node-sass -w public/css/src/ -o public/css/"
+    "watch:css": "node-sass -w public/css/src/ -o public/css/",
+
+
+    "//" : "Build everything",
+    "build:css": "node-sass public/css/src/styles.scss | cleancss -o public/css/styles.css",
+
+    "build": "npm run build:css"
   },
 
   "main": "keystone.js"
