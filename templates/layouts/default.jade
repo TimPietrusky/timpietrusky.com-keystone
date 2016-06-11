@@ -65,7 +65,7 @@ html
               - var counter = 0
               ul
                 each link in navLinks
-                  if (counter == 0) 
+                  if (counter == 0)
                     li
                       h1
                         a(href=link.href data-category=link.key data-css=(section == link.key ? 'active' : null))= link.label
@@ -73,9 +73,9 @@ html
                           each i in new Array(3)
                             span
                               | &gt;
-                  else 
+                  else
                     li: a(href=link.href data-category=link.key)= link.label
-                  
+
                   - counter = counter + 1
 
             nav.sub-navigation
@@ -84,10 +84,6 @@ html
                   a(href='/about' data-category='about' data-css=(section == 'about' ? 'active' : null)) About
 
 
-                  
-
-    div.bugindustries
-      iframe(src="http://s.codepen.io/TimPietrusky/debug/410cc3465a4bea4b6d5a14de695bb7e3", frameborder="0", allowfullscreen)
 
     div.gw.wrapper
 
