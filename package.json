@@ -27,7 +27,7 @@
     "node": ">=0.10.22",
     "npm": ">=1.3.14"
   },
-  
+
   "scripts": {
     "//" : "Start the server",
     "start": "parallelshell 'node keystone.js' 'npm run watch:css' 'npm run watch:js'",
@@ -41,7 +41,7 @@
 
 
     "//" : "Build everything",
-    "build:css": "node-sass public/css/src/styles.scss | cleancss -o public/css/styles.css",
+    "build:css": "node-sass public/css/src/styles.scss | cleancss -o public/css/styles-min.css public/css/styles.css",
 
     "build": "npm run build:css"
   },
