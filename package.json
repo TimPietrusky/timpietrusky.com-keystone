@@ -43,7 +43,7 @@
     "//" : "Build everything",
     "build:css": "node-sass public/css/src/styles.scss | cleancss -o public/css/styles-min.css public/css/styles.css",
 
-    "build": "npm run build:css"
+    "build": "parallelshell 'npm run build:css'"
   },
 
   "main": "keystone.js"
